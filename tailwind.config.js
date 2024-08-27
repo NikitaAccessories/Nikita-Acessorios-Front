@@ -8,6 +8,12 @@ module.exports = {
         libreBaskerville: ['Libre Baskerville', 'serif'],
         playfairDisplay: ['Playfair Display', 'serif'],
       },
+      colors: {
+        primary: {
+          beige100: '#fff2ec',
+          beige50: '#fffaf7'
+        },
+      },
     },
   },
   plugins: [],
