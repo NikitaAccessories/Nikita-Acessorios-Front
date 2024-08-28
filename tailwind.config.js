@@ -3,15 +3,16 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        baskervville: ['Baskervville', 'serif'],
-        italiana: ['Italiana', 'serif'],
-        libreBaskerville: ['Libre Baskerville', 'serif'],
-        playfairDisplay: ['Playfair Display', 'serif'],
+        baskervville: ["Baskervville", "serif"],
+        italiana: ["Italiana", "serif"],
+        libreBaskerville: ["Libre Baskerville", "serif"],
+        playfairDisplay: ["Playfair Display", "serif"],
       },
       colors: {
         primary: {
-          beige100: '#fff2ec',
-          beige50: '#fffaf7'
+          beige100: "rgb(255, 242, 236)",
+          beige50: "rgb(255, 250, 247)",
+          red100: "rgb(222, 21, 55)",
         },
       },
     },
