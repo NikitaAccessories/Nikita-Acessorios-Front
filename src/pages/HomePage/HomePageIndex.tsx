@@ -18,6 +18,57 @@ import whatsappICON from "../../assets/elements-Home/icons/whatsapp-icon.png";
 import instagramICON from "../../assets/elements-Home/icons/instragram-icon.png.png";
 
 const HomePage: React.FC = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const products = [
+    {
+      title: "Luz Dourada",
+      description:
+        'Os Brincos "Reflexo"são feitos para brilhar. Leves e confortáveis, são a escolha perfeita para dar um toque final sofisticado a qualquer visual.',
+      image: anelJPEG,
+    },
+    {
+      title: "Luz do Sol",
+      description:
+        "Inspirado na beleza dos raios solares, ele captura a essência da luz dourada em um design sofisticado e contemporâneo.",
+      image: anelJPEG,
+    },
+    {
+      title: "Luz Dourada",
+      description:
+        "Cria Reflexos que iluminam o rosto de quem o usa. Ideal para ocasiões especiais ou para adicionar um toque de glamour ao dia a dia.",
+      image: anelJPEG,
+    },
+    {
+      title: "Brilho Real",
+      description:
+        "Com um design minimalista ele destaca a beleza natural do ouro, irradiando sofisticação.",
+      image: anelJPEG,
+    },
+    {
+      title: "Brilho Real",
+      description:
+        "Com um design minimalista ele destaca a beleza natural do ouro, irradiando sofisticação.",
+      image: anelJPEG,
+    },
+  ];
+
+  const maxIndex = products.length - 1; // Índice máximo
+
+  // Função para avançar no carrossel
+  const handleNext = () => {
+    if (currentIndex < maxIndex) {
+      setCurrentIndex((prevIndex) => prevIndex + 1);
+    }
+  };
+
+  // Função para voltar no carrossel
+  const handlePrev = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex((prevIndex) => prevIndex - 1);
+    }
+  };
+
   return (
     <>
       <header className="bg-primary-beige100 w-full h-[7.5rem] flex-col flex items-center justify-center">
@@ -72,79 +123,65 @@ const HomePage: React.FC = () => {
             ></video>
           </div>
         </section>
-        <section className="flex items-center justify-center w-full h-[34rem] flex-col">
+        <section className="flex flex-col items-center justify-center w-full h-[40rem] relative">
+          {/* Botão para avançar para a esquerda */}
           <button
-            className="absolute left-4 transform -translate-y-1/2 bg-white flex items-center justify-center w-10 h-10 rounded-full shadow-xl"
-            id="arrowLeft"
+            className="z-50 absolute left-8 transform -translate-y-1/2 bg-white flex items-center justify-center w-10 h-10 rounded-full shadow-xl"
+            onClick={handlePrev} // Moverá para a esquerda
           >
             <img src={arrowLeft} />
           </button>
+
+          {/* Contêiner do carrossel */}
+          <div className="w-[20rem] sm:w-[80rem] sm:h-[28rem] overflow-hidden flex items-center">
+            <div
+              className="flex transition-transform duration-700 ease-out"
+              style={{ transform: `translateX(-${currentIndex * 16.9}rem)` }} // Movendo 1 card de 16rem por vez
+            >
+              {products.map((product, index) => (
+                <div
+                  key={index}
+                  className="flex-shrink-0 w-[16rem] h-[24rem] bg-white flex flex-col items-center justify-center gap-2 shadow-xl mx-2"
+                >
+                  <div className="bg-black w-[12.5rem] h-[14rem]">
+                    <img src={product.image} alt={product.title} />
+                  </div>
+                  <h2 className="text-xl font-italiana">{product.title}</h2>
+                  <p className="text-[0.9rem] w-[15rem] h-[5rem] text-center font-baskervville">
+                    {product.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Botão para avançar para a direita */}
           <button
-            className="absolute right-4 transform -translate-y-1/2 bg-white flex items-center justify-center w-10 h-10 rounded-full  shadow-xl"
-            id="arrowRight"
+            className="z-50 absolute right-8 transform -translate-y-1/2 bg-white flex items-center justify-center w-10 h-10 rounded-full shadow-xl"
+            onClick={handleNext} // Moverá para a direita
           >
             <img src={arrowRight} />
           </button>
-          <div className="flex items-center justify-center gap-5">
-            <div className="flex flex-col items-center justify-center bg-white w-[16rem] h-[24rem] gap-2 shadow-md">
-              <div className="bg-black w-[12.5rem] h-[14rem]">
-                <img src={anelJPEG} />
-              </div>
-              <h2 className="text-xl font-italiana">Luz Dourada</h2>
-              <p className="text-[0.9rem] w-[15rem] h-[5rem] text-center font-baskervville">
-                Os Brincos "Reflexo"são feitos para brilhar. Leves e
-                confortáveis, são a escolha perfeita para dar um toque final
-                sofisticado a qualquer visual.
-              </p>
-            </div>
-            <div className="flex flex-col items-center justify-center bg-white w-[16rem] h-[24rem] gap-2 shadow-md">
-              <div className="bg-black w-[12.5rem] h-[14rem]">
-                <img src={anelJPEG} />
-              </div>
-              <h2 className="text-xl font-italiana">Luz do Sol</h2>
-              <p className="text-[0.9rem] w-[15rem] h-[5rem] text-center font-baskervville">
-                Inspirado na beleza dos raios solares, ele captura a essência da
-                luz dourada em um design sofisticado e contemporanêo.
-              </p>
-            </div>
-            <div className="flex flex-col items-center justify-center bg-white w-[16rem] h-[24rem] gap-2 shadow-md">
-              <div className="bg-black w-[12.5rem] h-[14rem]">
-                <img src={anelJPEG} />
-              </div>
-              <h2 className="text-xl font-italiana">Luz Dourada</h2>
-              <p className="text-[0.9rem] w-[15rem] h-[5rem] text-center font-baskervville">
-                Cria Reflexos que iluminam o rosto de quem o usa. Ideal para
-                ocasiões especiais ou para adicionar um toque de glamour ao dia
-                a dia.
-              </p>
-            </div>
-            <div className="flex flex-col items-center justify-center bg-white w-[16rem] h-[24rem] gap-2 shadow-md">
-              <div className="bg-black w-[12.5rem] h-[14rem]">
-                <img src={anelJPEG} alt="" />
-              </div>
-              <h2 className="text-xl font-italiana">Brilho Real</h2>
-              <p className="text-[0.9rem] w-[15rem] h-[5rem] text-center font-baskervville">
-                Com um design minimalista ele destaca a beleza natural do ouro,
-                irradiando sofisticação.
-              </p>
-            </div>
-          </div>
-          <div className="bg-white mt-10 flex items-center justify-center h-10 border-[1px] border-black shadow-xl">
-            <button className="flex items-center justify-center w-[10rem] font-libreBaskerville">
+
+          {/* Botão "VER TODOS" posicionado corretamente */}
+          <div className="mt-8 flex justify-center">
+            <button className="bg-white border-[1px] border-black shadow-xl py-2 px-8 font-libreBaskerville">
               VER TODOS
             </button>
           </div>
         </section>
-        <section className="bg-black flex items-center justify-center h-[28rem] w-full">
+        <section className="bg-black flex items-center justify-center h-[40rem] w-full">
           <div className="bg-primary-red100 h-full w-1/2 flex flex-col items-center justify-center">
-            <h1 className="text-white text-[3.5rem] text-center font-playfairDisplay py-12">
-              COLEÇÃO{" "}
-              <span className="font-italiana border-2 rounded-[50%] px-6">
-                {" "}
-                nova{" "}
-              </span>
-              CHEGANDO
-            </h1>
+            <div className="w-[40rem]">
+              <h1 className="text-white text-[4.5rem] text-center font-playfairDisplay py-12">
+                COLEÇÃO{" "}
+                <span className="font-italiana border-2 rounded-[50%] px-6">
+                  {" "}
+                  nova{" "}
+                </span>
+                CHEGANDO
+              </h1>
+            </div>
             <div className="bg-transparent text-white flex items-center justify-center h-8 border-[1px] border-white shadow-xl">
               <button className="flex items-center justify-center w-[14rem] font-libreBaskerville">
                 VER TODOS
@@ -155,147 +192,98 @@ const HomePage: React.FC = () => {
             <img className="h-full w-full" src={colarJPEG} />
           </div>
         </section>
-        <section className="bg-white w-full h-[32rem] flex items-center justify-center">
+        <section className="bg-white w-full h-[40rem] flex items-center justify-center">
           <div className="flex items-center justify-center gap-8">
-            <div className="bg-black flex items-center justify-center w-[30rem] h-[25rem]">
-              <img src={imageApresentationOne} className="w-full h-full" />
+            <div className="bg-black flex items-center justify-center ">
+              <img
+                src={imageApresentationOne}
+                className="w-[30rem] h-[32rem]"
+              />
             </div>
             <div className="w-1/2 grid grid-cols-2 gap-4">
               <img
                 src={imageApresentationTwo}
-                className="w-[14rem] h-[12rem]"
+                className="w-[15rem] h-[15.5rem]"
               />
               <img
                 src={imageApresentationThree}
-                className="w-[14rem] h-[12rem]"
+                className="w-[15rem] h-[15.5rem]"
               />
               <img
                 src={imageApresentationFour}
-                className="w-[14rem] h-[12rem]"
+                className="w-[15rem] h-[15.5rem]"
               />
               <img
                 src={imageApresentationFive}
-                className="w-[14rem] h-[12rem]"
+                className="w-[15rem] h-[15.5rem]"
               />
             </div>
           </div>
         </section>
-        <section className="h-[40rem] w-full flex flex-col items-center justify-center ">
+        <section className="h-[40rem] w-full flex flex-col items-center justify-center gap-8">
           <h1 className="text-shadow-sale text-[3rem] font-playfairDisplay">
             SALE
           </h1>
-          <div className="flex items-center justify-center h-[30rem] w-full overflow-hidden">
-            <div className="flex flex-col items-center justify-center w-[16rem] h-[26rem] gap-1">
-              <div className="bg-red-600 text-white text-center px-6 py-[0.1rem] font-playfairDisplay mb-2">
-                SALE
-              </div>
-              <div className="bg-black w-[12.5rem] h-[14rem]">
-                <img src={anelJPEG} />
-              </div>
-              <h2 className="text-2xl font-italiana">Brilho Real</h2>
-              <p className="text-[0.9rem] w-[15rem] h-[3rem] text-center font-baskervville">
-                Com um desgin minimalista, ele destaca a beleza natural
-              </p>
-              <p className="text-[0.8rem] font-playfairDisplay line-through">
-                R$ 5.254,99
-              </p>
-              <p className="font-playfairDisplay">R$ 5.192,00</p>
-            </div>
-            <div className="flex flex-col items-center justify-center w-[16rem] h-[26rem] gap-1">
-              <div className="bg-red-600 text-white text-center px-6 py-[0.1rem] font-playfairDisplay mb-2">
-                SALE
-              </div>
-              <div className="bg-black w-[12.5rem] h-[14rem]">
-                <img src={anelJPEG} />
-              </div>
-              <h2 className="text-2xl font-italiana">Brilho Real</h2>
-              <p className="text-[0.9rem] w-[15rem] h-[3rem] text-center font-baskervville">
-                Com um desgin minimalista, ele destaca a beleza natural
-              </p>
-              <p className="text-[0.8rem] font-playfairDisplay line-through">
-                R$ 5.254,99
-              </p>
-              <p className="font-playfairDisplay">R$ 5.192,00</p>
-            </div>
-            <div className="flex flex-col items-center justify-center w-[16rem] h-[26rem] gap-1">
-              <div className="bg-red-600 text-white text-center px-6 py-[0.1rem] font-playfairDisplay mb-2">
-                SALE
-              </div>
-              <div className="bg-black w-[12.5rem] h-[14rem]">
-                <img src={anelJPEG} />
-              </div>
-              <h2 className="text-2xl font-italiana">Brilho Real</h2>
-              <p className="text-[0.9rem] w-[15rem] h-[3rem] text-center font-baskervville">
-                Com um desgin minimalista, ele destaca a beleza natural
-              </p>
-              <p className="text-[0.8rem] font-playfairDisplay line-through">
-                R$ 5.254,99
-              </p>
-              <p className="font-playfairDisplay">R$ 5.192,00</p>
-            </div>
-            <div className="flex flex-col items-center justify-center w-[16rem] h-[26rem] gap-1">
-              <div className="bg-red-600 text-white text-center px-6 py-[0.1rem] font-playfairDisplay mb-2">
-                SALE
-              </div>
-              <div className="bg-black w-[12.5rem] h-[14rem]">
-                <img src={anelJPEG} />
-              </div>
-              <h2 className="text-2xl font-italiana">Brilho Real</h2>
-              <p className="text-[0.9rem] w-[15rem] h-[3rem] text-center font-baskervville">
-                Com um desgin minimalista, ele destaca a beleza natural
-              </p>
-              <p className="text-[0.8rem] font-playfairDisplay line-through">
-                R$ 5.254,99
-              </p>
-              <p className="font-playfairDisplay">R$ 5.192,00</p>
-            </div>
-            <div className="flex flex-col items-center justify-center bg-white w-[16rem] h-[26rem] gap-1">
-              <div className="bg-red-600 text-white text-center px-6 py-[0.1rem] font-playfairDisplay mb-2">
-                SALE
-              </div>
-              <div className="bg-black w-[12.5rem] h-[14rem]">
-                <img src={anelJPEG} />
-              </div>
-              <h2 className="text-2xl font-italiana">Brilho Real</h2>
-              <p className="text-[0.9rem] w-[15rem] h-[3rem] text-center font-baskervville">
-                Com um desgin minimalista, ele destaca a beleza natural
-              </p>
-              <p className="text-[0.8rem] font-playfairDisplay line-through">
-                R$ 5.254,99
-              </p>
-              <p className="font-playfairDisplay">R$ 5.192,00</p>
+
+          {/* Wrapper for the carousel */}
+          <div className="relative w-full overflow-hidden">
+            {/* Carousel animation */}
+            <div className="flex animate-marquee space-x-6">
+              {/* Product Card */}
+              {Array(7)
+                .fill(0)
+                .map((_, index) => (
+                  <div
+                    key={index}
+                    className="flex flex-col items-center justify-center w-[16rem] h-[26rem] gap-2"
+                  >
+                    <div className="bg-red-600 text-white text-center px-6 py-[0.1rem] font-playfairDisplay mb-2">
+                      SALE
+                    </div>
+                    <div className="bg-black w-[12.5rem] h-[14rem]">
+                      <img src={anelJPEG} />
+                    </div>
+                    <h2 className="text-2xl font-italiana">Brilho Real</h2>
+                    <p className="text-[0.9rem] w-[15rem] h-[3rem] text-center font-baskervville">
+                      Com um desgin minimalista, ele destaca a beleza natural
+                    </p>
+                    <p className="text-[0.8rem] font-playfairDisplay line-through">
+                      R$ 5.254,99
+                    </p>
+                    <p className="font-playfairDisplay">R$ 5.192,00</p>
+                  </div>
+                ))}
             </div>
           </div>
+
           <div className="bg-white flex items-center justify-center h-10 border-[1px] border-black shadow-xl">
             <button className="flex items-center justify-center w-[10rem] font-libreBaskerville">
               VER TODOS
             </button>
           </div>
         </section>
-        <section className="flex items-center justify-center w-full h-[34rem]">
-          <div className="bg-white h-[28rem] w-[60rem]">
+        <section className="flex items-center justify-center w-full h-[35rem]">
+          <div className="bg-white h-[30rem] w-[60rem]">
             <img src={imageApresentationSix} className="w-full h-full" />
           </div>
         </section>
-        <footer className="flex items-center justify-center bg-primary-red100 w-full h-[14rem] px-14">
-          <div className="flex font-baskervville flex-col items-center justify-center text-center text-xs">
+        <footer className="flex items-center justify-center bg-primary-red100 w-full h-[14rem] space-x-16">
+          <div className="flex font-baskervville flex-col items-center justify-center text-center text-xs w-[15rem]">
             <h1 className="text-white text-sm">ATENDIMENTO</h1>
             <p className="text-white">Acompanhe o Seu Pedido</p>
             <p className="text-white">Whatsapp</p>
             <p className="text-white">Marketplace e Parcerias</p>
           </div>
-          <div className="flex font-baskervville flex-col items-center justify-center text-center text-sm">
-            <h1 className="text-white mb-4 text-xl">TROCA FÁCIL</h1>
+          <div className="flex text-white font-baskervville flex-col items-center justify-center text-center text-sm w-[15rem]">
+            <h1 className="mb-4 text-xl">TROCA FÁCIL</h1>
             <p className="text-white">
               NÃO SERVIU? A NIKITA FAZ A TROCA GRATUITAMENTE.
             </p>
           </div>
-          <div className="flex font-baskervville flex-col items-center justify-center text-center text-sm">
-            <h1 className="text-white mb-4 text-xl">ENTREGA</h1>
-            <p className="text-white">
-              FRETE GRÁTIS EM SUAS COMPRAS A PARTIR DE R$200.00.
-            </p>
-            <div className="font-baskervville text-white items-center justify-center text-center text-sm mt-4">
+          <div className="flex text-white font-baskervville flex-col items-center justify-center text-center text-sm w-[15rem]">
+            <h1 className="mb-4 text-xl">ENTREGA</h1>
+            <p>FRETE GRÁTIS EM SUAS COMPRAS A PARTIR DE R$200.00.</p>
+            <div className="font-baskervville text-white items-center justify-center text-center text-sm mt-4 w-[15rem]">
               <h1>NIKITA</h1>
               <p>Redes Sociais</p>
               <div className="flex items-center justify-center gap-2">
@@ -304,18 +292,16 @@ const HomePage: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="flex font-baskervville flex-col items-center justify-center text-center text-sm">
-            <h1 className="text-white mb-4 text-xl">PARCELAMENTO</h1>
-            <p className="text-white">
-              PARCELE SUAS COMPRAS EM 10X SEM JUROS NO CARTÃO.
-            </p>
+          <div className="flex text-white font-baskervville flex-col items-center justify-center text-center text-sm w-[15rem]">
+            <h1 className="mb-4 text-xl">PARCELAMENTO</h1>
+            <p>PARCELE SUAS COMPRAS EM 10X SEM JUROS NO CARTÃO.</p>
           </div>
-          <div className="flex font-baskervville flex-col items-center justify-center text-center text-xs">
-            <h1 className="text-white text-sm">INFORMAÇÕES</h1>
-            <p className="text-white">Política de Troca</p>
-            <p className="text-white">Formas de Pagamento</p>
-            <p className="text-white">Regulamento GiftBack</p>
-            <p className="text-white">Cartão Presente</p>
+          <div className="flex text-white font-baskervville flex-col items-center justify-center text-center text-xs w-[15rem]">
+            <h1 className="text-sm">INFORMAÇÕES</h1>
+            <p>Política de Troca</p>
+            <p>Formas de Pagamento</p>
+            <p>Regulamento GiftBack</p>
+            <p>Cartão Presente</p>
           </div>
         </footer>
       </main>
