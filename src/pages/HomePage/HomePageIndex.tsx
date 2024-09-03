@@ -1,9 +1,9 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./homePage.css";
 import logoPng from "../../assets/elements-Home/logo.png";
-import shoppingBag from "../../assets/elements-Home/icons/shoopingBag.png";
-import { Link } from "react-router-dom";
 import videoFile from "../../assets/elements-Home/slidesShow/slidesGif.mp4";
+import shoppingBag from "../../assets/elements-Home/icons/shoopingBag.png";
 import arrowLeft from "../../assets/elements-Home/icons/arrow-left.png";
 import arrowRight from "../../assets/elements-Home/icons/arrow-right.png";
 import anelJPEG from "../../assets/elements-Home/images-products/anel.jpeg";
@@ -15,7 +15,7 @@ import imageApresentationFour from "../../assets/elements-Home/images-apresentat
 import imageApresentationFive from "../../assets/elements-Home/images-apresentation/image5.jpeg";
 import imageApresentationSix from "../../assets/elements-Home/images-apresentation/image6.jpeg";
 import whatsappICON from "../../assets/elements-Home/icons/whatsapp-icon.png";
-import instagramICON from "../../assets/elements-Home/icons/instragram-icon.png.png";
+import instagramICON from "../../assets/elements-Home/icons/instragram-icon.png";
 
 const HomePage: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -71,8 +71,8 @@ const HomePage: React.FC = () => {
 
   return (
     <>
-      <header className="bg-primary-beige100 w-full h-[7.5rem] flex-col flex items-center justify-center">
-        <nav className="flex space-x-[15rem] mt-3">
+      <header className="fixed top-0 z-50 bg-primary-beige100 w-full h-[7.7rem] flex-col flex items-center justify-center">
+        <nav className="flex space-x-[25rem] mt-3">
           <div className="elements-left flex items-center justify-center gap-5">
             <span className="font-playfairDisplay cursor-pointer">
               DELIVERY
@@ -93,27 +93,29 @@ const HomePage: React.FC = () => {
             />
           </div>
         </nav>
-        <div className="bg-primary-beige50 navegation w-full mt-2 h-11 flex items-center justify-center">
+        <div className="bg-primary-beige50 mt-2 w-full h-11 flex bottom-0 justify-center">
           <ul className="flex items-center justify-center">
-            <li className="mx-5 cursor-pointer font-playfairDisplay">JÓIAS</li>
-            <li className="mx-5 cursor-pointer font-playfairDisplay">
+            <li className="mx-5 cursor-pointer font-playfairDisplay hover:text-primary-red100 ease-out duration-300">
+              JÓIAS
+            </li>
+            <li className="mx-5 cursor-pointer font-playfairDisplay hover:text-primary-red100 ease-out duration-300">
               ACESSÓRIOS
             </li>
-            <li className="mx-5 cursor-pointer font-playfairDisplay">
+            <li className="mx-5 cursor-pointer font-playfairDisplay hover:text-primary-red100 ease-out duration-300">
               COLEÇÕES
             </li>
-            <li className="mx-5 cursor-pointer font-playfairDisplay">
-              BEST SELLER
+            <li className="mx-5 cursor-pointer font-playfairDisplay hover:text-primary-red100 ease-out duration-300">
+              MAIS VENDIDOS
             </li>
-            <li className="mx-5 cursor-pointer font-playfairDisplay">
+            <li className="mx-5 cursor-pointer font-playfairDisplay hover:text-primary-red100 ease-out duration-300">
               PRESENTES
             </li>
           </ul>
         </div>
       </header>
-      <main className="mt-4">
-        <section className="w-full h-[36rem] flex justify-center items-center">
-          <div className="bg-white w-[63rem] shadow-2xl h-[21rem] flex items-center justify-center ">
+      <main>
+        <section className="w-full mt-40 h-[36rem] flex justify-center items-center">
+          <div className="bg-white w-[70rem] shadow-2xl flex items-center justify-center">
             <video
               className="shadow-2xl"
               autoPlay
@@ -126,7 +128,7 @@ const HomePage: React.FC = () => {
         <section className="flex flex-col items-center justify-center w-full h-[40rem] relative">
           {/* Botão para avançar para a esquerda */}
           <button
-            className="z-50 absolute left-8 transform -translate-y-1/2 bg-white flex items-center justify-center w-10 h-10 rounded-full shadow-xl"
+            className="border-2 z-50 absolute left-14 transform -translate-y-1/2 bg-white flex items-center justify-center w-10 h-10 rounded-full shadow-xl"
             onClick={handlePrev} // Moverá para a esquerda
           >
             <img src={arrowLeft} />
@@ -157,7 +159,7 @@ const HomePage: React.FC = () => {
 
           {/* Botão para avançar para a direita */}
           <button
-            className="z-50 absolute right-8 transform -translate-y-1/2 bg-white flex items-center justify-center w-10 h-10 rounded-full shadow-xl"
+            className="border-2 z-50 absolute right-14 transform -translate-y-1/2 bg-white flex items-center justify-center w-10 h-10 rounded-full shadow-xl"
             onClick={handleNext} // Moverá para a direita
           >
             <img src={arrowRight} />
@@ -194,11 +196,8 @@ const HomePage: React.FC = () => {
         </section>
         <section className="bg-white w-full h-[40rem] flex items-center justify-center">
           <div className="flex items-center justify-center gap-8">
-            <div className="bg-black flex items-center justify-center ">
-              <img
-                src={imageApresentationOne}
-                className="w-[30rem] h-[32rem]"
-              />
+            <div className="flex items-center justify-center ">
+              <img src={imageApresentationOne} className="w-full h-[32rem]" />
             </div>
             <div className="w-1/2 grid grid-cols-2 gap-4">
               <img
@@ -220,7 +219,7 @@ const HomePage: React.FC = () => {
             </div>
           </div>
         </section>
-        <section className="h-[40rem] w-full flex flex-col items-center justify-center gap-8">
+        <section className="h-[40rem] w-full flex flex-col items-center justify-center gap-12">
           <h1 className="text-shadow-sale text-[3rem] font-playfairDisplay">
             SALE
           </h1>
@@ -262,23 +261,21 @@ const HomePage: React.FC = () => {
             </button>
           </div>
         </section>
-        <section className="flex items-center justify-center w-full h-[35rem]">
-          <div className="bg-white h-[30rem] w-[60rem]">
+        <section className="flex items-center justify-center w-full h-[40rem]">
+          <div className="bg-white w-[70rem]">
             <img src={imageApresentationSix} className="w-full h-full" />
           </div>
         </section>
         <footer className="flex items-center justify-center bg-primary-red100 w-full h-[14rem] space-x-16">
-          <div className="flex font-baskervville flex-col items-center justify-center text-center text-xs w-[15rem]">
-            <h1 className="text-white text-sm">ATENDIMENTO</h1>
-            <p className="text-white">Acompanhe o Seu Pedido</p>
-            <p className="text-white">Whatsapp</p>
-            <p className="text-white">Marketplace e Parcerias</p>
+          <div className="flex text-white font-baskervville flex-col items-center justify-center text-center text-xs w-[15rem]">
+            <h1 className="text-sm">ATENDIMENTO</h1>
+            <p>Acompanhe o Seu Pedido</p>
+            <p>Whatsapp</p>
+            <p>Marketplace e Parcerias</p>
           </div>
           <div className="flex text-white font-baskervville flex-col items-center justify-center text-center text-sm w-[15rem]">
             <h1 className="mb-4 text-xl">TROCA FÁCIL</h1>
-            <p className="text-white">
-              NÃO SERVIU? A NIKITA FAZ A TROCA GRATUITAMENTE.
-            </p>
+            <p>NÃO SERVIU? A NIKITA FAZ A TROCA GRATUITAMENTE.</p>
           </div>
           <div className="flex text-white font-baskervville flex-col items-center justify-center text-center text-sm w-[15rem]">
             <h1 className="mb-4 text-xl">ENTREGA</h1>
@@ -287,8 +284,12 @@ const HomePage: React.FC = () => {
               <h1>NIKITA</h1>
               <p>Redes Sociais</p>
               <div className="flex items-center justify-center gap-2">
-                <img src={whatsappICON} />
-                <img src={instagramICON} />
+                <a href="">
+                  <img className="cursor-pointer" src={whatsappICON} />
+                </a>
+                <a href="https://www.instagram.com/nikitaacessoriosoficial?igsh=MXVsbHBkcG9iODZncg==">
+                  <img className="cursor-pointer" src={instagramICON} />
+                </a>
               </div>
             </div>
           </div>
