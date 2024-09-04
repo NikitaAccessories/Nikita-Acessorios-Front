@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import "./homePage.css";
 import logoPng from "../../assets/elements-Home/logo.png";
@@ -69,6 +69,61 @@ const HomePage: React.FC = () => {
     }
   };
 
+  // <EFEITO CARROSSEL>
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const cloneRef = useRef<HTMLDivElement>(null);
+
+  const speed = 1.5; // Velocidade de deslocamento do carrossel
+  const distanceBetweenCarousels = 200; // Distância entre o carrossel original e o clone
+
+  const animateCarousel = (
+    carouselElement: HTMLDivElement,
+    cloneElement: HTMLDivElement
+  ) => {
+    let positionX = 0;
+    let animationFrameId: number;
+
+    const animate = () => {
+      // Move o carrossel e o clone para a esquerda
+      positionX -= speed;
+
+      // Se o carrossel original sair completamente da tela, reposiciona ele no final
+      if (
+        positionX <=
+        -carouselElement.offsetWidth - distanceBetweenCarousels
+      ) {
+        positionX += carouselElement.offsetWidth + distanceBetweenCarousels;
+      }
+
+      // Atualiza o transform para ambos os carrosséis
+      carouselElement.style.transform = `translateX(${positionX}px)`;
+      cloneElement.style.transform = `translateX(${positionX}px)`;
+
+      // Chama a animação continuamente
+      animationFrameId = requestAnimationFrame(animate);
+    };
+
+    // Inicia a animação
+    animationFrameId = requestAnimationFrame(animate);
+
+    // Limpa a animação quando o componente for desmontado
+    return () => cancelAnimationFrame(animationFrameId);
+  };
+
+  useEffect(() => {
+    const carouselElement = carouselRef.current;
+    const cloneElement = cloneRef.current;
+
+    if (carouselElement && cloneElement) {
+      // Inicia a animação
+      const cleanUp = animateCarousel(carouselElement, cloneElement);
+
+      // Limpa a animação quando o componente for desmontado
+      return cleanUp;
+    }
+  }, []);
+  // </EFEITO CARROSSEL>
+
   return (
     <>
       <header className="fixed top-0 z-50 bg-primary-beige100 w-full h-[7.7rem] flex-col flex items-center justify-center">
@@ -128,7 +183,7 @@ const HomePage: React.FC = () => {
         <section className="flex flex-col items-center justify-center w-full h-[40rem] relative">
           {/* Botão para avançar para a esquerda */}
           <button
-            className="border-2 z-50 absolute left-14 transform -translate-y-1/2 bg-white flex items-center justify-center w-10 h-10 rounded-full shadow-xl"
+            className="border-2 absolute left-14 transform -translate-y-1/2 bg-white flex items-center justify-center w-10 h-10 rounded-full shadow-xl"
             onClick={handlePrev} // Moverá para a esquerda
           >
             <img src={arrowLeft} />
@@ -159,7 +214,7 @@ const HomePage: React.FC = () => {
 
           {/* Botão para avançar para a direita */}
           <button
-            className="border-2 z-50 absolute right-14 transform -translate-y-1/2 bg-white flex items-center justify-center w-10 h-10 rounded-full shadow-xl"
+            className="border-2 absolute right-14 transform -translate-y-1/2 bg-white flex items-center justify-center w-10 h-10 rounded-full shadow-xl"
             onClick={handleNext} // Moverá para a direita
           >
             <img src={arrowRight} />
@@ -224,34 +279,60 @@ const HomePage: React.FC = () => {
             SALE
           </h1>
 
-          {/* Wrapper for the carousel */}
+          {/* Wrapper para o carrossel */}
           <div className="relative w-full overflow-hidden">
-            {/* Carousel animation */}
-            <div className="flex animate-marquee space-x-6">
-              {/* Product Card */}
-              {Array(7)
-                .fill(0)
-                .map((_, index) => (
-                  <div
-                    key={index}
-                    className="flex flex-col items-center justify-center w-[16rem] h-[26rem] gap-2"
-                  >
-                    <div className="bg-red-600 text-white text-center px-6 py-[0.1rem] font-playfairDisplay mb-2">
-                      SALE
-                    </div>
-                    <div className="bg-black w-[12.5rem] h-[14rem]">
-                      <img src={anelJPEG} />
-                    </div>
-                    <h2 className="text-2xl font-italiana">Brilho Real</h2>
-                    <p className="text-[0.9rem] w-[15rem] h-[3rem] text-center font-baskervville">
-                      Com um desgin minimalista, ele destaca a beleza natural
-                    </p>
-                    <p className="text-[0.8rem] font-playfairDisplay line-through">
-                      R$ 5.254,99
-                    </p>
-                    <p className="font-playfairDisplay">R$ 5.192,00</p>
+            <div ref={carouselRef} className="flex space-x-6">
+              {/* Produtos */}
+              {[...Array(6)].map((_, index) => (
+                <div
+                  key={index}
+                  className="flex flex-col items-center justify-center w-[16rem] h-[26rem] gap-2"
+                >
+                  <div className="bg-red-600 text-white text-center px-6 py-[0.1rem] font-playfairDisplay mb-2">
+                    SALE
                   </div>
-                ))}
+                  <div className="bg-black w-[12.5rem] h-[14rem]">
+                    <img src={anelJPEG} alt="Produto" />
+                  </div>
+                  <h2 className="text-2xl font-italiana">Brilho Real</h2>
+                  <p className="text-[0.9rem] w-[15rem] h-[3rem] text-center font-baskervville">
+                    Com um design minimalista, ele destaca a beleza natural
+                  </p>
+                  <p className="text-[0.8rem] font-playfairDisplay line-through">
+                    R$ 5.254,99
+                  </p>
+                  <p className="font-playfairDisplay">R$ 5.192,00</p>
+                </div>
+              ))}
+            </div>
+            {/* Clone do carrossel para continuidade visual */}
+            <div
+              ref={cloneRef}
+              className="flex space-x-6 absolute top-0 left-full"
+              style={{ left: `calc(100% + ${distanceBetweenCarousels}px)` }}
+            >
+              {/* Produtos duplicados */}
+              {[...Array(6)].map((_, index) => (
+                <div
+                  key={index + 6}
+                  className="flex flex-col items-center justify-center w-[16rem] h-[26rem] gap-2"
+                >
+                  <div className="bg-red-600 text-white text-center px-6 py-[0.1rem] font-playfairDisplay mb-2">
+                    SALE
+                  </div>
+                  <div className="bg-black w-[12.5rem] h-[14rem]">
+                    <img src={anelJPEG} alt="Produto" />
+                  </div>
+                  <h2 className="text-2xl font-italiana">Brilho Real</h2>
+                  <p className="text-[0.9rem] w-[15rem] h-[3rem] text-center font-baskervville">
+                    Com um design minimalista, ele destaca a beleza natural
+                  </p>
+                  <p className="text-[0.8rem] font-playfairDisplay line-through">
+                    R$ 5.254,99
+                  </p>
+                  <p className="font-playfairDisplay">R$ 5.192,00</p>
+                </div>
+              ))}
             </div>
           </div>
 

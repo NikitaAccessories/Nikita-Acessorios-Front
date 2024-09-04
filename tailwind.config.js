@@ -3,12 +3,22 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        marquee: "marquee 30s linear infinite",
+        'initial': 'initialAnimation 10s linear forwards', // Animação inicial (do meio da página)
+        'marquee-continuous': 'marqueeContinuous 30s linear infinite', // Animação contínua padrão
+        'marquee-delayed': 'marqueeDelayed 30s linear infinite', // Segunda animação com atraso
       },
       keyframes: {
-        marquee: {
-          "0%": { transform: "translateX(100%)" },
-          "100%": { transform: "translateX(-100%)" },
+        initialAnimation: {
+          '0%': { transform: 'translateX(50%)' }, // Começa no meio da página
+          '100%': { transform: 'translateX(-100%)' }, // Sai da tela pela esquerda
+        },
+        marqueeContinuous: {
+          '0%': { transform: 'translateX(100%)' }, // Começa fora da tela à direita
+          '100%': { transform: 'translateX(-100%)' }, // Sai completamente à esquerda
+        },
+        marqueeDelayed: {
+          '0%': { transform: 'translateX(110%)' }, // Começa mais à direita com um gap
+          '100%': { transform: 'translateX(-100%)' }, // Sai da tela, atrás do primeiro carrossel
         },
       },
       fontFamily: {
