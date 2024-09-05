@@ -1,9 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import "./homePage.css";
-import logoPng from "../../assets/elements-Home/logo.png";
 import videoFile from "../../assets/elements-Home/slidesShow/slidesGif.mp4";
-import shoppingBag from "../../assets/elements-Home/icons/shoopingBag.png";
 import arrowLeft from "../../assets/elements-Home/icons/arrow-left.png";
 import arrowRight from "../../assets/elements-Home/icons/arrow-right.png";
 import anelJPEG from "../../assets/elements-Home/images-products/anel.jpeg";
@@ -14,8 +12,9 @@ import imageApresentationThree from "../../assets/elements-Home/images-apresenta
 import imageApresentationFour from "../../assets/elements-Home/images-apresentation/image4.jpeg";
 import imageApresentationFive from "../../assets/elements-Home/images-apresentation/image5.jpeg";
 import imageApresentationSix from "../../assets/elements-Home/images-apresentation/image6.jpeg";
-import whatsappICON from "../../assets/elements-Home/icons/whatsapp-icon.png";
-import instagramICON from "../../assets/elements-Home/icons/instragram-icon.png";
+import Header from "../../components/Header";
+import SeeAllButton from "../../components/SeeAllButton";
+import Footer from "../../components/Footer";
 
 const HomePage: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -74,7 +73,7 @@ const HomePage: React.FC = () => {
   const cloneRef = useRef<HTMLDivElement>(null);
 
   const speed = 1.5; // Velocidade de deslocamento do carrossel
-  const distanceBetweenCarousels = 200; // Distância entre o carrossel original e o clone
+  const distanceBetweenCarousels = 400; // Distância entre o carrossel original e o clone
 
   const animateCarousel = (
     carouselElement: HTMLDivElement,
@@ -126,48 +125,7 @@ const HomePage: React.FC = () => {
 
   return (
     <>
-      <header className="fixed top-0 z-50 bg-primary-beige100 w-full h-[7.7rem] flex-col flex items-center justify-center">
-        <nav className="flex space-x-[25rem] mt-3">
-          <div className="elements-left flex items-center justify-center gap-5">
-            <span className="font-playfairDisplay cursor-pointer">
-              DELIVERY
-            </span>
-            <span className="font-playfairDisplay cursor-pointer">CONTATO</span>
-          </div>
-          <Link to={"/"}>
-            <img src={logoPng} width="132rem" alt="Logo PNG" />
-          </Link>
-          <div className="elements-right flex items-center justify-center gap-5">
-            <span className="font-playfairDisplay cursor-pointer w-28">
-              Olá, faça login ou cadastre-se.
-            </span>
-            <img
-              src={shoppingBag}
-              className="cursor-pointer"
-              alt="shopping bag icon"
-            />
-          </div>
-        </nav>
-        <div className="bg-primary-beige50 mt-2 w-full h-11 flex bottom-0 justify-center">
-          <ul className="flex items-center justify-center">
-            <li className="mx-5 cursor-pointer font-playfairDisplay hover:text-primary-red100 ease-out duration-300">
-              JÓIAS
-            </li>
-            <li className="mx-5 cursor-pointer font-playfairDisplay hover:text-primary-red100 ease-out duration-300">
-              ACESSÓRIOS
-            </li>
-            <li className="mx-5 cursor-pointer font-playfairDisplay hover:text-primary-red100 ease-out duration-300">
-              COLEÇÕES
-            </li>
-            <li className="mx-5 cursor-pointer font-playfairDisplay hover:text-primary-red100 ease-out duration-300">
-              MAIS VENDIDOS
-            </li>
-            <li className="mx-5 cursor-pointer font-playfairDisplay hover:text-primary-red100 ease-out duration-300">
-              PRESENTES
-            </li>
-          </ul>
-        </div>
-      </header>
+      <Header></Header>
       <main>
         <section className="w-full mt-40 h-[36rem] flex justify-center items-center">
           <div className="bg-white w-[70rem] shadow-2xl flex items-center justify-center">
@@ -183,7 +141,7 @@ const HomePage: React.FC = () => {
         <section className="flex flex-col items-center justify-center w-full h-[40rem] relative">
           {/* Botão para avançar para a esquerda */}
           <button
-            className="border-2 absolute left-14 transform -translate-y-1/2 bg-white flex items-center justify-center w-10 h-10 rounded-full shadow-xl"
+            className="border-2 z-10 absolute left-14 transform -translate-y-1/2 bg-white flex items-center justify-center w-10 h-10 rounded-full shadow-xl"
             onClick={handlePrev} // Moverá para a esquerda
           >
             <img src={arrowLeft} />
@@ -214,17 +172,15 @@ const HomePage: React.FC = () => {
 
           {/* Botão para avançar para a direita */}
           <button
-            className="border-2 absolute right-14 transform -translate-y-1/2 bg-white flex items-center justify-center w-10 h-10 rounded-full shadow-xl"
+            className="border-2 z-10 absolute right-14 transform -translate-y-1/2 bg-white flex items-center justify-center w-10 h-10 rounded-full shadow-xl"
             onClick={handleNext} // Moverá para a direita
           >
             <img src={arrowRight} />
           </button>
 
           {/* Botão "VER TODOS" posicionado corretamente */}
-          <div className="mt-8 flex justify-center">
-            <button className="bg-white border-[1px] border-black shadow-xl py-2 px-8 font-libreBaskerville">
-              VER TODOS
-            </button>
+          <div className="mt-8 flex justify-center border-[1px] border-black w-[12rem] h-10 shadow-xl">
+            <SeeAllButton></SeeAllButton>
           </div>
         </section>
         <section className="bg-black flex items-center justify-center h-[40rem] w-full">
@@ -239,10 +195,8 @@ const HomePage: React.FC = () => {
                 CHEGANDO
               </h1>
             </div>
-            <div className="bg-transparent text-white flex items-center justify-center h-8 border-[1px] border-white shadow-xl">
-              <button className="flex items-center justify-center w-[14rem] font-libreBaskerville">
-                VER TODOS
-              </button>
+            <div className="bg-transparent text-white flex items-center justify-center h-8 w-[14rem] border-[1px] border-white shadow-xl">
+              <SeeAllButton></SeeAllButton>
             </div>
           </div>
           <div className="bg-white left-0 h-full w-1/2">
@@ -336,10 +290,8 @@ const HomePage: React.FC = () => {
             </div>
           </div>
 
-          <div className="bg-white flex items-center justify-center h-10 border-[1px] border-black shadow-xl">
-            <button className="flex items-center justify-center w-[10rem] font-libreBaskerville">
-              VER TODOS
-            </button>
+          <div className="bg-transparent flex items-center justify-center h-10 border-[1px] border-black w-[10rem] shadow-xl">
+            <SeeAllButton></SeeAllButton>
           </div>
         </section>
         <section className="flex items-center justify-center w-full h-[40rem]">
@@ -347,45 +299,7 @@ const HomePage: React.FC = () => {
             <img src={imageApresentationSix} className="w-full h-full" />
           </div>
         </section>
-        <footer className="flex items-center justify-center bg-primary-red100 w-full h-[14rem] space-x-16">
-          <div className="flex text-white font-baskervville flex-col items-center justify-center text-center text-xs w-[15rem]">
-            <h1 className="text-sm">ATENDIMENTO</h1>
-            <p>Acompanhe o Seu Pedido</p>
-            <p>Whatsapp</p>
-            <p>Marketplace e Parcerias</p>
-          </div>
-          <div className="flex text-white font-baskervville flex-col items-center justify-center text-center text-sm w-[15rem]">
-            <h1 className="mb-4 text-xl">TROCA FÁCIL</h1>
-            <p>NÃO SERVIU? A NIKITA FAZ A TROCA GRATUITAMENTE.</p>
-          </div>
-          <div className="flex text-white font-baskervville flex-col items-center justify-center text-center text-sm w-[15rem]">
-            <h1 className="mb-4 text-xl">ENTREGA</h1>
-            <p>FRETE GRÁTIS EM SUAS COMPRAS A PARTIR DE R$200.00.</p>
-            <div className="font-baskervville text-white items-center justify-center text-center text-sm mt-4 w-[15rem]">
-              <h1>NIKITA</h1>
-              <p>Redes Sociais</p>
-              <div className="flex items-center justify-center gap-2">
-                <a href="">
-                  <img className="cursor-pointer" src={whatsappICON} />
-                </a>
-                <a href="https://www.instagram.com/nikitaacessoriosoficial?igsh=MXVsbHBkcG9iODZncg==">
-                  <img className="cursor-pointer" src={instagramICON} />
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="flex text-white font-baskervville flex-col items-center justify-center text-center text-sm w-[15rem]">
-            <h1 className="mb-4 text-xl">PARCELAMENTO</h1>
-            <p>PARCELE SUAS COMPRAS EM 10X SEM JUROS NO CARTÃO.</p>
-          </div>
-          <div className="flex text-white font-baskervville flex-col items-center justify-center text-center text-xs w-[15rem]">
-            <h1 className="text-sm">INFORMAÇÕES</h1>
-            <p>Política de Troca</p>
-            <p>Formas de Pagamento</p>
-            <p>Regulamento GiftBack</p>
-            <p>Cartão Presente</p>
-          </div>
-        </footer>
+        <Footer></Footer>
       </main>
     </>
   );
