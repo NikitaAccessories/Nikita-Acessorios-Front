@@ -65,7 +65,7 @@ const Footer: React.FC = () => {
           <h1 className="text-sm font-bold mt-4 text-xl">
             FORMAS DE PAGAMENTO
           </h1>
-          <div className="flex space-x-6">
+          <div className="flex space-x-4">
             <div className="w-12 h-6 bg-white"></div>
             <div className="w-12 h-6 bg-white"></div>
             <div className="w-12 h-6 bg-white"></div>
@@ -78,7 +78,7 @@ const Footer: React.FC = () => {
       {/* Layout desktop (hidden on mobile) */}
       <div className="hidden md:flex md:flex-row md:items-center md:justify-center w-full md:space-x-16">
         {/* Coluna 1 - Atendimento */}
-        <div className="flex flex-col items-center justify-center text-center text-xs space-y-2 w-full md:w-[15rem]">
+        <div className="flex flex-col items-center justify-center text-center text-xs space-y-2 w-full md:w-[15rem] font-playfairDisplay">
           <h1 className="text-sm font-bold">ATENDIMENTO</h1>
           <p>Acompanhe o Seu Pedido</p>
           <p>Whatsapp</p>
@@ -86,13 +86,13 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Coluna 2 - Troca Fácil */}
-        <div className="flex flex-col items-center justify-center text-center text-sm space-y-2 w-full md:w-[15rem]">
+        <div className="flex flex-col items-center justify-center text-center text-sm space-y-2 w-full md:w-[15rem] font-baskervville">
           <h1 className="text-xl mb-4 font-bold">TROCA FÁCIL</h1>
           <p>NÃO SERVIU? A NIKITA FAZ A TROCA GRATUITAMENTE.</p>
         </div>
 
         {/* Coluna 3 - Entrega e Redes Sociais */}
-        <div className="flex flex-col items-center justify-center text-center text-sm space-y-2 w-full md:w-[15rem]">
+        <div className="flex flex-col items-center justify-center text-center text-sm space-y-2 w-full md:w-[15rem] font-baskervville">
           <h1 className="text-xl mb-4 font-bold">ENTREGA</h1>
           <p>FRETE GRÁTIS EM SUAS COMPRAS A PARTIR DE R$200.00.</p>
           <div className="mt-4">
@@ -118,13 +118,13 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Coluna 4 - Parcelamento */}
-        <div className="flex flex-col items-center justify-center text-center text-sm space-y-2 w-full md:w-[15rem]">
+        <div className="flex flex-col items-center justify-center text-center text-sm space-y-2 w-full md:w-[15rem] font-baskervville">
           <h1 className="text-xl mb-4 font-bold">PARCELAMENTO</h1>
           <p>PARCELE SUAS COMPRAS EM 10X SEM JUROS NO CARTÃO.</p>
         </div>
 
         {/* Coluna 5 - Informações */}
-        <div className="flex flex-col items-center justify-center text-center text-xs space-y-2 w-full md:w-[15rem]">
+        <div className="flex flex-col items-center justify-center text-center text-xs space-y-2 w-full md:w-[15rem] font-playfairDisplay">
           <h1 className="text-sm font-bold">INFORMAÇÕES</h1>
           <p>Política de Troca</p>
           <p>Formas de Pagamento</p>

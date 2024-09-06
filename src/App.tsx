@@ -5,6 +5,8 @@ import AccountPage from "./pages/AccountPage/AccountPageIndex";
 import Header from "./components/Header";
 import SeeAllButton from "./components/SeeAllButton";
 import Footer from "./components/Footer";
+import HomePageDesktop from "./components/HomePageDesktop";
+import HomePageMobile from "./components/HomePageMobile";
 import "./index.css";
 import './tailwind.css';
 

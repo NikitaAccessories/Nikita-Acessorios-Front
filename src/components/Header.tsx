@@ -4,8 +4,8 @@ import logoPNG from "../assets/elements-Home/logo.png";
 import shoppingBagICON from "../assets/elements-Home/icons/shoopingBag.png";
 import searchICON from "../assets/elements-Home/icons/search.png";
 import locationICON from "../assets/elements-Home/icons/location.png";
-import menuICON from "../assets/elements-Home/icons/menuButton.png"
-import closedICON from '../assets/elements-Home/icons/closedICON.png'
+import menuICON from "../assets/elements-Home/icons/menuButton.png";
+import closedICON from "../assets/elements-Home/icons/closedICON.png";
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,7 +23,7 @@ const Header: React.FC = () => {
           </button>
         </div>
 
-        <div className="hidden md:flex items-center gap-5 mx-28">
+        <div className="hidden md:flex items-center justify-center gap-5">
           <span className="font-playfairDisplay cursor-pointer">DELIVERY</span>
           <span className="font-playfairDisplay cursor-pointer">CONTATO</span>
         </div>
@@ -32,7 +32,7 @@ const Header: React.FC = () => {
           <img src={logoPNG} width="120" alt="Logo PNG" className="mx-auto" />
         </Link>
 
-        <div className="hidden md:flex items-center mx-28">
+        <div className="hidden md:flex items-center justify-center gap-5">
           <span className="font-playfairDisplay cursor-pointer w-28">
             Olá, faça login ou cadastre-se.
           </span>
