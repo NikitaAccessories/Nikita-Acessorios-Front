@@ -14,6 +14,7 @@ import imageApresentationSix from "../assets/elements-Home/images-apresentation/
 import Header from "./Header";
 import SeeAllButton from "./SeeAllButton";
 import Footer from "./Footer";
+import "./GlobalComponents.css";
 
 const HomePageDesktop: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -25,35 +26,35 @@ const HomePageDesktop: React.FC = () => {
 
   const products = [
     {
-        title: "Luz Dourada",
-        description:
-          'Os Brincos "Reflexo"são feitos para brilhar. Leves e confortáveis, são a escolha perfeita para dar um toque final sofisticado a qualquer visual.',
-        image: anelJPEG,
-      },
-      {
-        title: "Luz do Sol",
-        description:
-          "Inspirado na beleza dos raios solares, ele captura a essência da luz dourada em um design sofisticado e contemporâneo.",
-        image: anelJPEG,
-      },
-      {
-        title: "Luz Dourada",
-        description:
-          "Cria Reflexos que iluminam o rosto de quem o usa. Ideal para ocasiões especiais ou para adicionar um toque de glamour ao dia a dia.",
-        image: anelJPEG,
-      },
-      {
-        title: "Brilho Real",
-        description:
-          "Com um design minimalista ele destaca a beleza natural do ouro, irradiando sofisticação.",
-        image: anelJPEG,
-      },
-      {
-        title: "Brilho Real",
-        description:
-          "Com um design minimalista ele destaca a beleza natural do ouro, irradiando sofisticação.",
-        image: anelJPEG,
-      },
+      title: "Luz Dourada",
+      description:
+        'Os Brincos "Reflexo"são feitos para brilhar. Leves e confortáveis, são a escolha perfeita para dar um toque final sofisticado a qualquer visual.',
+      image: anelJPEG,
+    },
+    {
+      title: "Luz do Sol",
+      description:
+        "Inspirado na beleza dos raios solares, ele captura a essência da luz dourada em um design sofisticado e contemporâneo.",
+      image: anelJPEG,
+    },
+    {
+      title: "Luz Dourada",
+      description:
+        "Cria Reflexos que iluminam o rosto de quem o usa. Ideal para ocasiões especiais ou para adicionar um toque de glamour ao dia a dia.",
+      image: anelJPEG,
+    },
+    {
+      title: "Brilho Real",
+      description:
+        "Com um design minimalista ele destaca a beleza natural do ouro, irradiando sofisticação.",
+      image: anelJPEG,
+    },
+    {
+      title: "Brilho Real",
+      description:
+        "Com um design minimalista ele destaca a beleza natural do ouro, irradiando sofisticação.",
+      image: anelJPEG,
+    },
   ];
 
   const maxIndex = products.length - 1;
