@@ -6,6 +6,13 @@ import searchICON from "../assets/elements-Home/icons/search.png";
 import locationICON from "../assets/elements-Home/icons/location.png";
 import menuICON from "../assets/elements-Home/icons/menuButton.png";
 import closedICON from "../assets/elements-Home/icons/closedICON.png";
+import bijuteriaPrataICON from "../assets/elements-Home/icons/bijuteriaPrataICON.jpeg";
+import prata925ICON from "../assets/elements-Home/icons/prata925ICON.jpeg";
+import semiJoiaDouradaICON from "../assets/elements-Home/icons/semiJoiaDouradaICON.jpeg";
+import semiJoiaMistaICON from "../assets/elements-Home/icons/semiJoiaMistaICON.jpeg";
+import semiJoiaRoseICON from "../assets/elements-Home/icons/semiJoiaRoseICON.jpeg";
+import imageJoiaCard1 from "../assets/elements-Home/imagesCardsHeader/imageJoiaCard1.jpeg";
+import imageJoiaCard2 from "../assets/elements-Home/imagesCardsHeader/imageJoiaCard2.jpeg";
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -47,20 +54,115 @@ const Header: React.FC = () => {
       {/* Barra de navegação inferior visível apenas em desktops */}
       <div className="bg-primary-beige50 mt-2 w-full h-11 flex justify-center hidden md:flex">
         <ul className="md:flex items-center justify-center">
-          <li className="mx-5 cursor-pointer font-playfairDisplay hover:text-primary-red100 ease-out duration-300">
+          {/* Item 1 */}
+          <li className="relative group mx-5 cursor-pointer font-playfairDisplay hover:text-primary-red100 ease-out duration-300">
             JÓIAS
+            <div className="absolute left-0 top-full mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out">
+              <div className="bg-white border-t-2 border-primary-red100 p-4 shadow-lg flex justify-center space-x-20">
+                <div className="text-black">
+                  <h2 className="mb-2">JÓIAS</h2>
+                  <p className="bg-primary-red100 h-[2px] w-[6rem] mb-10"></p>
+                  <ul className="space-y-4">
+                    <li>ANÉIS</li>
+                    <li>CORRENTES</li>
+                    <li>COLARES</li>
+                    <li>PULSEIRAS</li>
+                    <li>BRINCOS</li>
+                    <li>PIERCINGS</li>
+                    <li>CONJUNTOS</li>
+                    <li>PINGENTES</li>
+                    <li>SALE</li>
+                    <li>VER TODOS</li>
+                  </ul>
+                </div>
+                <div className="text-black flex flex-col items-start">
+                  <h2 className="mb-2">MATERIAL</h2>
+                  <p className="bg-primary-red100 h-[2px] w-[6rem] mb-10"></p>
+                  <ul className="space-y-4 items-start">
+                    <li className="flex items-center w-[12rem]">
+                      <img src={semiJoiaDouradaICON} alt="" className="mr-2" />
+                      <span>semi joia dourada</span>
+                    </li>
+                    <li className="flex items-center w-[12rem]">
+                      <img src={semiJoiaRoseICON} alt="" className="mr-2" />
+                      <span>semi joia rose</span>
+                    </li>
+                    <li className="flex items-center w-[12rem]">
+                      <img src={prata925ICON} alt="" className="mr-2" />
+                      <span>prata 925</span>
+                    </li>
+                    <li className="flex items-center w-[12rem]">
+                      <img src={semiJoiaMistaICON} alt="" className="mr-2" />
+                      <span>semi joia mista</span>
+                    </li>
+                    <li className="flex items-center w-[12rem]">
+                      <img src={semiJoiaDouradaICON} alt="" className="mr-2" />
+                      <span>bijuteria dourada</span>
+                    </li>
+                    <li className="flex items-center w-[12rem]">
+                      <img src={bijuteriaPrataICON} alt="" className="mr-2" />
+                      <span>bijuteria prata</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="text-black flex relative top-20 gap-10">
+                  <div className="w-[15rem] h-[12.5rem]">
+                    <img className="mb-4" src={imageJoiaCard1} alt="" />
+                    <div className="w-[15rem] h-[3.5rem] border-2 border-primary-red100 flex justify-center items-center">
+                      <h1>EXPLORE NOSSOS BRINCOS</h1>
+                    </div>
+                  </div>
+
+                  <div className="w-[15rem] h-[12.5rem]">
+                    <img className="mb-4" src={imageJoiaCard2} alt="" />
+                    <div className="w-[15rem] h-[3.5rem] border-2 border-primary-red100 flex justify-center items-center">
+                      <h1>EXPLORE NOSSOS COLARES</h1>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </li>
-          <li className="mx-5 cursor-pointer font-playfairDisplay hover:text-primary-red100 ease-out duration-300">
+
+          {/* Item 2 */}
+          <li className="relative group mx-5 cursor-pointer font-playfairDisplay hover:text-primary-red100 ease-out duration-300">
             ACESSÓRIOS
+            <div className="absolute left-0 top-full mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out">
+              <div className="bg-white border-t-2 border-primary-red100 p-4 w-[300px] shadow-lg">
+                {/* Adicione seu conteúdo aqui */}
+              </div>
+            </div>
           </li>
-          <li className="mx-5 cursor-pointer font-playfairDisplay hover:text-primary-red100 ease-out duration-300">
+
+          {/* Item 3 */}
+          <li className="relative group mx-5 cursor-pointer font-playfairDisplay hover:text-primary-red100 ease-out duration-300">
             COLEÇÕES
+            <div className="absolute left-0 top-full mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out">
+              <div className="bg-white border-t-2 border-primary-red100 p-4 w-[300px] shadow-lg">
+                {/* Adicione seu conteúdo aqui */}
+              </div>
+            </div>
           </li>
-          <li className="mx-5 cursor-pointer font-playfairDisplay hover:text-primary-red100 ease-out duration-300">
+
+          {/* Item 4 */}
+          <li className="relative group mx-5 cursor-pointer font-playfairDisplay hover:text-primary-red100 ease-out duration-300">
             MAIS VENDIDOS
+            <div className="absolute left-0 top-full mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out">
+              <div className="bg-white border-t-2 border-primary-red100 p-4 w-[300px] shadow-lg">
+                {/* Adicione seu conteúdo aqui */}
+              </div>
+            </div>
           </li>
-          <li className="mx-5 cursor-pointer font-playfairDisplay hover:text-primary-red100 ease-out duration-300">
+
+          {/* Item 5 */}
+          <li className="relative group mx-5 cursor-pointer font-playfairDisplay hover:text-primary-red100 ease-out duration-300">
             PRESENTES
+            <div className="absolute left-0 top-full mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out">
+              <div className="bg-white border-t-2 border-primary-red100 p-4 w-[300px] shadow-lg">
+                {/* Adicione seu conteúdo aqui */}
+              </div>
+            </div>
           </li>
         </ul>
       </div>

@@ -10,7 +10,7 @@ import trocaICON from "../assets/elements-Home/icons/troca.png";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-primary-red100 w-full p-4 flex flex-col items-center justify-center text-white md:flex-row md:space-y-0 md:space-x-16 md:h-[14rem]">
+    <footer className="bg-primary-red100 w-full p-4 flex flex-col items-center justify-center text-white md:flex-row md:space-y-0 md:h-[14rem]">
       {/* Layout mobile (visible on mobile) */}
 
       <div className="flex flex-col space-y-8 w-full md:hidden mt-4">
