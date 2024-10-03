@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import "../components/__components-css/ComponentHeader.css";
 import logoPNG from "../assets/elements-Home/logo.png";
 import shoppingBagICON from "../assets/elements-Home/icons/shoopingBag.png";
 import searchICON from "../assets/elements-Home/icons/search.png";
@@ -21,20 +22,21 @@ import imageMaisVendidos1 from "../assets/elements-Home/imagesCardsHeader/imageM
 import imageMaisVendidos2 from "../assets/elements-Home/imagesCardsHeader/imageMaisVendidos2.jpeg";
 import imagePresentes1 from "../assets/elements-Home/imagesCardsHeader/imagePresentes1.jpg";
 import imagePresentes2 from "../assets/elements-Home/imagesCardsHeader/imagePresentes2.jpeg";
-
+import arrowBottom from "../assets/elements-Home/icons/arrow-bottomICON.png";
+import userICON from "../assets/elements-Home/icons/userICON.png";
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <header className="fixed top-0 z-50 bg-primary-beige100 w-full flex flex-col items-center justify-center">
-      <nav className="flex items-center justify-center w-full px-4 py-2 md:px-10 lg:px-20">
+      <nav className="flex items-center justify-center w-full px-4 py-4 md:px-10 lg:px-20">
         {/* Botão de menu visível apenas no mobile */}
         <div className="md:hidden flex items-center absolute left-5">
           <button
             className="text-black focus:outline-none"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            <img src={menuICON} alt="" />
+            <img src={menuICON} width="40" alt="" />
           </button>
         </div>
 
@@ -43,8 +45,13 @@ const Header: React.FC = () => {
           <span className="font-playfairDisplay cursor-pointer">CONTATO</span>
         </div>
         {/* Logo centralizado no mobile e à esquerda no desktop */}
-        <Link to={"/"} className="md:mx-auto">
-          <img src={logoPNG} width="120" alt="Logo PNG" className="mx-auto" />
+        <Link to={"/"} className="md:mx-auto animate-slide-down z-50">
+          <img
+            src={logoPNG}
+            width="150"
+            alt="Logo PNG"
+            className="mx-auto md:ml-0"
+          />
         </Link>
 
         <div className="hidden md:flex items-center justify-center gap-5">
@@ -67,7 +74,7 @@ const Header: React.FC = () => {
             JÓIAS
             {/* Dropdown */}
             <div className="w-[65rem] py-4 absolute -left-[15rem] top-full mt-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:block hover:opacity-100 hover:visible transition-opacity duration-300 ease-out cursor-default">
-              <div className="bg-white border-t-2 border-primary-red100 p-4 shadow-lg flex justify-center space-x-20">
+              <div className="bg-white h-[35rem] border-t-2 border-primary-red100 p-4 shadow-lg flex justify-center space-x-20">
                 <div className="pl-20 grid grid-cols-2">
                   <div className="text-black cursor-default">
                     <h2 className="mb-2 pt-2">JÓIAS</h2>
@@ -81,7 +88,7 @@ const Header: React.FC = () => {
                       <li>PIERCINGS</li>
                       <li>CONJUNTOS</li>
                       <li>PINGENTES</li>
-                      <li>SALE</li>
+                      <li className="text-primary-red100">SALE</li>
                       <li>VER TODOS</li>
                     </ul>
                   </div>
@@ -158,7 +165,7 @@ const Header: React.FC = () => {
             ACESSÓRIOS
             {/* Dropdown */}
             <div className="w-[65rem] py-4 absolute -left-[20rem] top-full mt-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:block hover:opacity-100 hover:visible transition-opacity duration-300 ease-out cursor-default">
-              <div className="bg-white border-t-2 border-primary-red100 p-4 shadow-lg flex justify-center space-x-20">
+              <div className="bg-white h-[35rem] border-t-2 border-primary-red100 p-4 shadow-lg flex justify-center space-x-20">
                 <div className="pl-16 grid grid-cols-2">
                   <div className="text-black cursor-default">
                     <h2 className="mb-2 pt-2">ACESSÓRIOS</h2>
@@ -228,7 +235,7 @@ const Header: React.FC = () => {
             COLEÇÕES
             {/* Dropdown */}
             <div className="w-[55rem] py-4 absolute -left-[20rem] top-full mt-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:block hover:opacity-100 hover:visible transition-opacity duration-300 ease-out cursor-default">
-              <div className="bg-white border-t-2 border-primary-red100 p-4 shadow-lg flex justify-center space-x-20">
+              <div className="bg-white h-[35rem] border-t-2 border-primary-red100 p-4 shadow-lg flex justify-center space-x-20">
                 <div className="pl-20 grid grid-cols-2">
                   <div className="text-black cursor-default">
                     <h2 className="mb-2 pt-2">JOIAS</h2>
@@ -280,7 +287,7 @@ const Header: React.FC = () => {
             MAIS VENDIDOS
             {/* Dropdown */}
             <div className="w-[55rem] py-4 absolute -left-[30rem] top-full mt-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:block hover:opacity-100 hover:visible transition-opacity duration-300 ease-out cursor-default">
-              <div className="bg-white border-t-2 border-primary-red100 p-4 shadow-lg flex justify-center space-x-20">
+              <div className="bg-white h-[35rem] border-t-2 border-primary-red100 p-4 shadow-lg flex justify-center space-x-20">
                 <div className="pl-20 grid grid-cols-2">
                   <div className="text-black cursor-default">
                     <h2 className="mb-2 pt-2 w-[8rem]">MAIS VENDIDOS</h2>
@@ -332,7 +339,7 @@ const Header: React.FC = () => {
             PRESENTES
             {/* Dropdown */}
             <div className="w-[65rem] py-4 absolute -left-[45rem] top-full mt-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:block hover:opacity-100 hover:visible transition-opacity duration-300 ease-out cursor-default">
-              <div className="bg-white border-t-2 border-primary-red100 p-4 shadow-lg flex justify-center space-x-20">
+              <div className="bg-white h-[35rem] border-t-2 border-primary-red100 p-4 shadow-lg flex justify-center space-x-20">
                 <div className="pl-10 grid grid-cols-2">
                   <div className="text-black cursor-default">
                     <h2 className="mb-2">PRESENTES</h2>
@@ -410,7 +417,7 @@ const Header: React.FC = () => {
                       alt=""
                     />
                     <div className="w-[15rem] h-[3.5rem] border-2 border-primary-red100 flex justify-center items-center">
-                      <h1 className="text-sm">CIRE SEU KIT PARA PRESENTEAR</h1>
+                      <h1 className="text-sm">CRIE SEU KIT PARA PRESENTEAR</h1>
                     </div>
                   </div>
 
@@ -454,32 +461,85 @@ const Header: React.FC = () => {
       </div>
 
       {/* Menu lateral para mobile */}
+      {/* Menu lateral para mobile com logo acima da lista */}
       {isMenuOpen && (
-        <div className="md:hidden absolute top-0 left-0 w-full h-screen bg-primary-beige100 shadow-lg z-50">
-          <div className="flex justify-between p-4">
-            <span className="text-2xl font-bold">Menu</span>
+        <div
+          className={`md:hidden fixed top-0 left-0 w-full h-screen bg-primary-beige100 shadow-lg z-50 flex items-center justify-center transition-transform duration-500 ease-in-out transform ${
+            isMenuOpen ? "translate-x-0" : "-translate-x-full"
+          }`}
+        >
+          <div className="absolute right-8 top-28 z-50">
             <button
               className="text-black focus:outline-none"
               onClick={() => setIsMenuOpen(false)}
             >
-              <img src={closedICON} alt="" />
+              <img src={closedICON} className="w-[3rem]" alt="Fechar menu" />
             </button>
           </div>
-          <ul className="flex flex-col p-4 space-y-4">
-            <li className="cursor-pointer font-playfairDisplay hover:text-primary-red100 ease-out duration-300">
-              JÓIAS
+
+          {/* Logo acima da lista */}
+          <div className="absolute top-32 left-0 right-0 flex justify-center">
+            <Link to={"/"}>
+              <img src={logoPNG} alt="Logo PNG" className="w-[15rem] mx-auto" />
+            </Link>
+          </div>
+
+          {/* Lista de itens do menu */}
+          <ul className="flex flex-col p-4 space-y-14 items-center justify-center text-2xl h-full mt-24 font-playfairDisplay">
+            {" "}
+            {/* Espaçamento extra acima da lista */}
+            <li>
+              <div className="flex items-center space-x-2">
+                <img
+                  src={userICON}
+                  alt="Ícone de usuário"
+                  className="w-8 h-8"
+                />
+                <h2>
+                  Olá, Entre Ou Cadastre-se
+                </h2>
+              </div>
+              <div className="mt-1 w-full h-[1px] bg-black"></div>
             </li>
-            <li className="cursor-pointer font-playfairDisplay hover:text-primary-red100 ease-out duration-300">
-              ACESSÓRIOS
+            <li className="flex justify-between w-[18rem] cursor-pointer font-playfairDisplay hover:text-primary-red100 ease-out duration-300">
+              <h1>JOIAS</h1>
+              <img
+                src={arrowBottom}
+                alt="Seta para baixo"
+                className="w-4 h-4"
+              />
             </li>
-            <li className="cursor-pointer font-playfairDisplay hover:text-primary-red100 ease-out duration-300">
-              COLEÇÕES
+            <li className="flex justify-between w-[18rem] cursor-pointer font-playfairDisplay hover:text-primary-red100 ease-out duration-300">
+              <h1>ACESSÓRIOS</h1>
+              <img
+                src={arrowBottom}
+                alt="Seta para baixo"
+                className="w-4 h-4"
+              />
             </li>
-            <li className="cursor-pointer font-playfairDisplay hover:text-primary-red100 ease-out duration-300">
-              MAIS VENDIDOS
+            <li className="flex justify-between w-[18rem] cursor-pointer font-playfairDisplay hover:text-primary-red100 ease-out duration-300">
+              <h1>COLEÇÕES</h1>
+              <img
+                src={arrowBottom}
+                alt="Seta para baixo"
+                className="w-4 h-4"
+              />
             </li>
-            <li className="cursor-pointer font-playfairDisplay hover:text-primary-red100 ease-out duration-300">
-              PRESENTES
+            <li className="flex justify-between w-[18rem] cursor-pointer font-playfairDisplay hover:text-primary-red100 ease-out duration-300">
+              <h1>MAIS VENDIDOS</h1>
+              <img
+                src={arrowBottom}
+                alt="Seta para baixo"
+                className="w-4 h-4"
+              />
+            </li>
+            <li className="flex justify-between w-[18rem] cursor-pointer font-playfairDisplay hover:text-primary-red100 ease-out duration-300">
+              <h1>PRESENTES</h1>
+              <img
+                src={arrowBottom}
+                alt="Seta para baixo"
+                className="w-4 h-4"
+              />
             </li>
           </ul>
         </div>
