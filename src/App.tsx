@@ -7,6 +7,7 @@ import SeeAllButton from "./components/SeeAllButton";
 import Footer from "./components/Footer";
 import HomePageDesktop from "./components/HomePageDesktop";
 import HomePageMobile from "./components/HomePageMobile";
+import PromotionScreen from "./components/PromotionScreen";
 import "./index.css";
 import './tailwind.css';
 

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./accountPage.css";
 import logoPNG from "../../assets/elements-Account/logo.png";
 import appleIcon from "../../assets/elements-Account/icons/apple-icon.png";
@@ -9,7 +10,13 @@ const AccountPage: React.FC = () => {
   return (
     <>
       <header className="relative top-0 w-full h-20 bg-primary-beige100 shadow-xl flex items-center px-14">
-        <img src={logoPNG} className="w-30 h-16" alt="Logo Nikita Acessórios" />
+        <Link to={"/"}>
+          <img
+            src={logoPNG}
+            className="w-30 h-16"
+            alt="Logo Nikita Acessórios"
+          />
+        </Link>
       </header>
       <main className="flex flex-col items-center justify-center mt-4">
         <section className="flex items-center w-[42rem] h-[18rem] bg-primary-rose px-6 shadow-xl border border-gray-300 mb-4">
