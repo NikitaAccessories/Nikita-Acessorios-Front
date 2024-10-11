@@ -56,9 +56,9 @@ const Header: React.FC = () => {
 
         <div className="hidden md:flex items-center justify-center gap-5">
           <Link to={"/AccountPage"}>
-          <h3 className="font-playfairDisplay cursor-pointer w-22">
-            Olá, faça login ou cadastre-se.
-          </h3>
+            <h3 className="font-playfairDisplay cursor-pointer w-22">
+              Olá, faça login ou cadastre-se.
+            </h3>
           </Link>
           <img
             src={shoppingBagICON}
@@ -469,7 +469,7 @@ const Header: React.FC = () => {
             isMenuOpen ? "translate-x-0" : "-translate-x-full"
           }`}
         >
-          <div className="absolute right-8 top-28 z-50">
+          <div className="absolute right-8 top-24 z-50">
             <button
               className="text-black focus:outline-none"
               onClick={() => setIsMenuOpen(false)}
@@ -496,7 +496,7 @@ const Header: React.FC = () => {
                   alt="Ícone de usuário"
                   className="w-8 h-8"
                 />
-                <h2>Olá, Entre Ou Cadastre-se</h2>
+                <h2>Olá, Entre ou Cadastre-se</h2>
               </div>
               <div className="mt-1 w-full h-[1px] bg-black"></div>
             </li>

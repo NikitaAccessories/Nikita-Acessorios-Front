@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import HomePageDesktop from "./components/HomePageDesktop";
 import HomePageMobile from "./components/HomePageMobile";
 import PromotionScreen from "./components/PromotionScreen";
+import ReceivedCode from "./pages/AccountPage/ReceiveCode";
 import "./index.css";
 import './tailwind.css';
 
@@ -17,6 +18,7 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/AccountPage" element={<AccountPage />} />
+        <Route path="/ReceiveCode" element={<ReceivedCode />} />
       </Routes>
     </Router>
   );
