@@ -1,6 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import "./GlobalComponents.css";
+import "../GlobalStylesForComponents.css";
 
 const SeeAllButton: React.FC = () => {
   return (

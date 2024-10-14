@@ -1,21 +1,21 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import videoFile from "../assets/elements-Home/slidesShow/slidesGif.gif";
-import arrowLeft from "../assets/elements-Home/icons/arrow-left.png";
-import arrowRight from "../assets/elements-Home/icons/arrow-right.png";
-import anelJPEG from "../assets/elements-Home/images-products/anel.jpeg";
-import colarJPEG from "../assets/elements-Home/images-products/colar.jpeg";
-import imageApresentationOne from "../assets/elements-Home/images-apresentation/image1.jpeg";
-import imageApresentationTwo from "../assets/elements-Home/images-apresentation/image2.jpeg";
-import imageApresentationThree from "../assets/elements-Home/images-apresentation/image3.jpeg";
-import imageApresentationFour from "../assets/elements-Home/images-apresentation/image4.jpeg";
-import imageApresentationFive from "../assets/elements-Home/images-apresentation/image5.jpeg";
-import imageApresentationSix from "../assets/elements-Home/images-apresentation/image6.jpeg";
-import Header from "./Header";
-import SeeAllButton from "./SeeAllButton";
-import Footer from "./Footer";
-import "./GlobalComponents.css";
-import PromotionScreen from "./PromotionScreen";
+import videoFile from "../../../assets/elements-Home/slidesShow/slidesGif.gif";
+import arrowLeft from "../../../assets/elements-Home/icons/arrow-left.png";
+import arrowRight from "../../../assets/elements-Home/icons/arrow-right.png";
+import anelJPEG from "../../../assets/elements-Home/images-products/anel.jpeg";
+import colarJPEG from "../../../assets/elements-Home/images-products/colar.jpeg";
+import imageApresentationOne from "../../../assets/elements-Home/images-apresentation/image1.jpeg";
+import imageApresentationTwo from "../../../assets/elements-Home/images-apresentation/image2.jpeg";
+import imageApresentationThree from "../../../assets/elements-Home/images-apresentation/image3.jpeg";
+import imageApresentationFour from "../../../assets/elements-Home/images-apresentation/image4.jpeg";
+import imageApresentationFive from "../../../assets/elements-Home/images-apresentation/image5.jpeg";
+import imageApresentationSix from "../../../assets/elements-Home/images-apresentation/image6.jpeg";
+import Header from "../../__main-components/Header";
+import SeeAllButton from "../../__main-components/SeeAllButton";
+import Footer from "../../__main-components/Footer";
+import "../../GlobalStylesForComponents.css"
+import PromotionScreen from "../../__main-components/PromotionScreen";
 
 const HomePageDesktop: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);

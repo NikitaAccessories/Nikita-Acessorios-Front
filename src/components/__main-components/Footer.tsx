@@ -1,12 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import whatsappICON from "../assets/elements-Home/icons/whatsapp-icon.png";
-import instagramICON from "../assets/elements-Home/icons/instragram-icon.png";
-import "./GlobalComponents.css";
-import truckICON from "../assets/elements-Home/icons/truck.png";
-import cardICON from "../assets/elements-Home/icons/card.png";
-import trocaICON from "../assets/elements-Home/icons/troca.png";
-
+import whatsappICON from "../../assets/elements-Home/icons/whatsapp-icon.png";
+import instagramICON from "../../assets/elements-Home/icons/instragram-icon.png";
+import truckICON from "../../assets/elements-Home/icons/truck.png";
+import cardICON from "../../assets/elements-Home/icons/card.png";
+import trocaICON from "../../assets/elements-Home/icons/troca.png";
+import "../GlobalStylesForComponents.css";
 
 const Footer: React.FC = () => {
   return (

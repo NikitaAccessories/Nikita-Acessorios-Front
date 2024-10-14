@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import XIcon from "../assets/elements-Components/icons/X-icon.png";
-import imagePromotion from "../assets/elements-Components/images/Image-PromotionScreen.jpeg";
-import "./GlobalComponents.css";
+import XIcon from "../../assets/elements-Components/icons/X-icon.png";
+import imagePromotion from "../../assets/elements-Components/images/Image-PromotionScreen.jpeg";
+import "../GlobalStylesForComponents.css";
 
 const PromotionScreen: React.FC = () => {
   // Estado para controlar a visibilidade do componente

@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./accountPage.css";
-import logoPNG from "../../assets/elements-Account/logo.png";
-import appleIcon from "../../assets/elements-Account/icons/apple-icon.png";
-import googleIcon from "../../assets/elements-Account/icons/google-icon.png";
-import facebookIcon from "../../assets/elements-Account/icons/facebook-icon.png";
-import arrowLeft from "../../assets/elements-Account/icons/arrow-left-icon.png";
+import "../../GlobalStylesForComponents.css";
+import logoPNG from "../../../assets/elements-Account/logo.png";
+import appleIcon from "../../../assets/elements-Account/icons/apple-icon.png";
+import googleIcon from "../../../assets/elements-Account/icons/google-icon.png";
+import facebookIcon from "../../../assets/elements-Account/icons/facebook-icon.png";
+import arrowLeft from "../../../assets/elements-Account/icons/arrow-left-icon.png";
 
-const ReceivedCode: React.FC = () => {
+const ReceivedCodeDesktop: React.FC = () => {
   return (
     <>
       <header className="relative top-0 w-full h-20 bg-primary-beige100 shadow-xl flex items-center px-14">
@@ -134,4 +134,4 @@ const ReceivedCode: React.FC = () => {
   );
 };
 
-export default ReceivedCode;
+export default ReceivedCodeDesktop;

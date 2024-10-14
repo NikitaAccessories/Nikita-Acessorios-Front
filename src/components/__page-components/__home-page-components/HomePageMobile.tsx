@@ -1,26 +1,26 @@
 import React, { useState, useEffect, useRef } from "react";
-import videoFile from "../assets/elements-Home/slidesShow/slidesGif.gif";
-import arrowLeft from "../assets/elements-Home/icons/arrow-left.png";
-import arrowRight from "../assets/elements-Home/icons/arrow-right.png";
-import anelJPEG from "../assets/elements-Home/images-products/anel.jpeg";
-import colarJPEG from "../assets/elements-Home/images-products/colar.jpeg";
-import imageApresentationOne from "../assets/elements-Home/images-apresentation/image1.jpeg";
-import imageApresentationTwo from "../assets/elements-Home/images-apresentation/image2.jpeg";
-import imageApresentationThree from "../assets/elements-Home/images-apresentation/image3.jpeg";
-import imageApresentationFour from "../assets/elements-Home/images-apresentation/image4.jpeg";
-import imageApresentationFive from "../assets/elements-Home/images-apresentation/image5.jpeg";
-import imageApresentationSix from "../assets/elements-Home/images-apresentation/image6.jpeg";
-import imageApresentationSeven from "../assets/elements-Home/images-apresentation/image7.png";
-import anelPandoraPNG from "../assets/elements-Home/images-products/anelPandora.png";
-import brincosPNG from "../assets/elements-Home/images-products/brincos.png";
-import colarCoraçãoPNG from "../assets/elements-Home/images-products/colarCoração.png";
-import pulseiraPNG from "../assets/elements-Home/images-products/pulseira.png";
-import bolsaPNG from "../assets/elements-Home/images-products/bolsa.png";
-import outrosPNG from "../assets/elements-Home/images-products/outros.png";
-import Header from "./Header";
-import SeeAllButton from "./SeeAllButton";
-import Footer from "./Footer";
-import "./GlobalComponents.css";
+import videoFile from "../../../assets/elements-Home/slidesShow/slidesGif.gif";
+import arrowLeft from "../../../assets/elements-Home/icons/arrow-left.png";
+import arrowRight from "../../../assets/elements-Home/icons/arrow-right.png";
+import anelJPEG from "../../../assets/elements-Home/images-products/anel.jpeg";
+import colarJPEG from "../../../assets/elements-Home/images-products/colar.jpeg";
+import imageApresentationOne from "../../../assets/elements-Home/images-apresentation/image1.jpeg";
+import imageApresentationTwo from "../../../assets/elements-Home/images-apresentation/image2.jpeg";
+import imageApresentationThree from "../../../assets/elements-Home/images-apresentation/image3.jpeg";
+import imageApresentationFour from "../../../assets/elements-Home/images-apresentation/image4.jpeg";
+import imageApresentationFive from "../../../assets/elements-Home/images-apresentation/image5.jpeg";
+import imageApresentationSix from "../../../assets/elements-Home/images-apresentation/image6.jpeg";
+import imageApresentationSeven from "../../../assets/elements-Home/images-apresentation/image7.png";
+import anelPandoraPNG from "../../../assets/elements-Home/images-products/anelPandora.png";
+import brincosPNG from "../../../assets/elements-Home/images-products/brincos.png";
+import colarCoraçãoPNG from "../../../assets/elements-Home/images-products/colarCoração.png";
+import pulseiraPNG from "../../../assets/elements-Home/images-products/pulseira.png";
+import bolsaPNG from "../../../assets/elements-Home/images-products/bolsa.png";
+import outrosPNG from "../../../assets/elements-Home/images-products/outros.png";
+import Header from "../../__main-components/Header";
+import SeeAllButton from "../../__main-components/SeeAllButton";
+import Footer from "../../__main-components/Footer";
+import "../../GlobalStylesForComponents.css"
 
 const HomePageMobile: React.FC = () => {
   // Estado para controlar o índice do carrossel
