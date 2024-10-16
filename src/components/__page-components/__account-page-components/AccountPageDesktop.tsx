@@ -7,7 +7,6 @@ import googleIcon from "../../../assets/elements-Account/icons/google-icon.png";
 import facebookIcon from "../../../assets/elements-Account/icons/facebook-icon.png";
 import visiblePassowrd from "../../../assets/elements-Account/icons/password-visible.png";
 import notVisiblePassword from "../../../assets/elements-Account/icons/password-not-visible.png";
-import ReceivedCode from "./ReceiveCodeDesktop";
 import arrowLeft from "../../../assets/elements-Account/icons/arrow-left-icon.png";
 
 const AccountPageDesktop: React.FC = () => {
@@ -83,17 +82,17 @@ const AccountPageDesktop: React.FC = () => {
                 onClick={togglePasswordVisibility}
               >
                 {showPassword ? (
-                  <img src={visiblePassowrd} />
+                  <img src={visiblePassowrd} alt="Senha Vísivel" />
                 ) : (
-                  <img src={notVisiblePassword} />
+                  <img src={notVisiblePassword} alt="Senha Não Vísivel" />
                 )}{" "}
                 {/* Alterna o ícone */}
               </button>
             </div>
 
             <div className="flex items-center justify-center text-white space-x-4 mt-4">
-              <button className="flex items-center justify-center bg-primary-graphite w-36 h-8 rounded-2xl text-lg">
-                <Link to={"/"}>
+              <Link to={"/"}>
+                <button className="flex items-center justify-center bg-primary-graphite w-36 h-8 rounded-2xl text-lg">
                   <span className="flex items-center justify-center gap-2 mr-4">
                     <img
                       className="h-4 w-4"
@@ -102,16 +101,16 @@ const AccountPageDesktop: React.FC = () => {
                     />
                     Voltar
                   </span>
-                </Link>
-              </button>
-              <button
-                className="flex items-center justify-center bg-primary-graphite w-32 h-8 rounded-2xl text-lg"
-                type="submit"
-              >
-                <Link to={"/ReceiveCode"}>
+                </button>
+              </Link>
+              <Link to={"/ReceiveCode"}>
+                <button
+                  className="flex items-center justify-center bg-primary-graphite w-32 h-8 rounded-2xl text-lg"
+                  type="submit"
+                >
                   <span>Entrar</span>
-                </Link>
-              </button>
+                </button>
+              </Link>
             </div>
             <Link to={"/ReceiveCode"}>
               <span className="flex items-center justify-center mt-2 cursor-pointer">

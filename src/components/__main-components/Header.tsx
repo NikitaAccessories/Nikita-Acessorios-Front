@@ -37,7 +37,7 @@ const Header: React.FC = () => {
             className="text-black focus:outline-none"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            <img src={menuICON} width="35" alt="" />
+            <img src={menuICON} width="30" alt="" />
           </button>
         </div>
 
@@ -475,14 +475,14 @@ const Header: React.FC = () => {
               className="text-black focus:outline-none"
               onClick={() => setIsMenuOpen(false)}
             >
-              <img src={closedICON} className="w-[3rem]" alt="Fechar menu" />
+              <img src={closedICON} className="w-[2rem]" alt="Fechar menu" />
             </button>
           </div>
 
           {/* Logo acima da lista */}
           <div className="absolute top-32 left-0 right-0 flex justify-center">
             <Link to={"/"}>
-              <img src={logoPNG} alt="Logo PNG" className="w-[15rem] mx-auto" />
+              <img src={logoPNG} alt="Logo PNG" className="w-[14rem] mx-auto" />
             </Link>
           </div>
 
@@ -491,17 +491,19 @@ const Header: React.FC = () => {
             {" "}
             {/* Espaçamento extra acima da lista */}
             <li>
-              <div className="flex items-center space-x-2">
-                <img
-                  src={userICON}
-                  alt="Ícone de usuário"
-                  className="w-8 h-8"
-                />
-                <h2>Olá, Entre ou Cadastre-se</h2>
-              </div>
+              <Link to={"/AccountPage"}>
+                <div className="flex items-center text-xl space-x-2">
+                  <img
+                    src={userICON}
+                    alt="Ícone de usuário"
+                    className="w-8 h-8"
+                  />
+                  <h2>Olá, Entre ou Cadastre-se</h2>
+                </div>
+              </Link>
               <div className="mt-1 w-full h-[1px] bg-black"></div>
             </li>
-            <li className="flex justify-between w-[20rem] cursor-pointer font-playfairDisplay hover:text-primary-red100 ease-out duration-300">
+            <li className="flex justify-between w-[20rem] text-xl cursor-pointer font-playfairDisplay hover:text-primary-red100 ease-out duration-300">
               <h1>JOIAS</h1>
               <img
                 src={arrowBottom}
@@ -509,7 +511,7 @@ const Header: React.FC = () => {
                 className="w-4 h-4"
               />
             </li>
-            <li className="flex justify-between w-[20rem] cursor-pointer font-playfairDisplay hover:text-primary-red100 ease-out duration-300">
+            <li className="flex justify-between w-[20rem] text-xl cursor-pointer font-playfairDisplay hover:text-primary-red100 ease-out duration-300">
               <h1>ACESSÓRIOS</h1>
               <img
                 src={arrowBottom}
@@ -517,7 +519,7 @@ const Header: React.FC = () => {
                 className="w-4 h-4"
               />
             </li>
-            <li className="flex justify-between w-[20rem] cursor-pointer font-playfairDisplay hover:text-primary-red100 ease-out duration-300">
+            <li className="flex justify-between w-[20rem] text-xl cursor-pointer font-playfairDisplay hover:text-primary-red100 ease-out duration-300">
               <h1>COLEÇÕES</h1>
               <img
                 src={arrowBottom}
@@ -525,7 +527,7 @@ const Header: React.FC = () => {
                 className="w-4 h-4"
               />
             </li>
-            <li className="flex justify-between w-[20rem] cursor-pointer font-playfairDisplay hover:text-primary-red100 ease-out duration-300">
+            <li className="flex justify-between w-[20rem] text-xl cursor-pointer font-playfairDisplay hover:text-primary-red100 ease-out duration-300">
               <h1>MAIS VENDIDOS</h1>
               <img
                 src={arrowBottom}
@@ -533,7 +535,7 @@ const Header: React.FC = () => {
                 className="w-4 h-4"
               />
             </li>
-            <li className="flex justify-between w-[20rem] cursor-pointer font-playfairDisplay hover:text-primary-red100 ease-out duration-300">
+            <li className="flex justify-between w-[20rem] text-xl cursor-pointer font-playfairDisplay hover:text-primary-red100 ease-out duration-300">
               <h1>PRESENTES</h1>
               <img
                 src={arrowBottom}

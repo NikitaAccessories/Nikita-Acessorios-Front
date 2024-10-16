@@ -15,8 +15,8 @@ const PromotionScreen: React.FC = () => {
   return (
     <>
       {isVisible && (
-        <section className="fixed inset-0 flex items-center justify-center z-50">
-          <main className="flex overflow-hidden items-center justify-center absolute top-[15rem] w-[48rem] h-[27.2rem]">
+        <section className="fixed inset-0 flex items-center justify-center backdrop-blur-sm bg-black/50 z-50">
+          <main className="flex overflow-hidden items-center justify-center absolute top-[12rem] w-[48rem] h-[27.2rem]">
             <div className="w-1/2 flex items-center justify-center">
               <img
                 src={imagePromotion}
@@ -45,17 +45,17 @@ const PromotionScreen: React.FC = () => {
               <div className="flex flex-col items-center bg-primary-red p-6">
                 <div className="grid grid-cols-2 gap-4 font-playfairDisplay">
                   <input
-                    className="rounded-2xl px-[1rem] w-42 py-2 bg-primary-rose25 text-white"
+                    className="focus:outline-none rounded-2xl px-[1rem] w-42 py-2 bg-primary-rose25 text-white"
                     type="text"
                     placeholder="Primeiro Nome"
                   />
                   <input
-                    className="rounded-2xl px-[1rem] w-42 py-2 bg-primary-rose25 text-white"
+                    className="focus:outline-none rounded-2xl px-[1rem] w-42 py-2 bg-primary-rose25 text-white"
                     type="text"
                     placeholder="Segundo Nome"
                   />
                   <input
-                    className="rounded-2xl px-[1rem] w-42 py-2 bg-primary-rose25 text-white"
+                    className="focus:outline-none rounded-2xl px-[1rem] w-42 py-2 bg-primary-rose25 text-white"
                     type="email"
                     placeholder="E-mail"
                   />

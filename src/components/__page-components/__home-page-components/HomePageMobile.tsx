@@ -20,7 +20,7 @@ import outrosPNG from "../../../assets/elements-Home/images-products/outros.png"
 import Header from "../../__main-components/Header";
 import SeeAllButton from "../../__main-components/SeeAllButton";
 import Footer from "../../__main-components/Footer";
-import "../../GlobalStylesForComponents.css"
+import "../../GlobalStylesForComponents.css";
 
 const HomePageMobile: React.FC = () => {
   // Estado para controlar o índice do carrossel
@@ -101,7 +101,7 @@ const HomePageMobile: React.FC = () => {
       <Header />
       <main className="flex flex-col items-center mt-[15rem]">
         {/* Seção de Vídeo/Imagem */}
-        <section className="w-full mt-6 h-[18rem] flex flex-col justify-center items-center mb-20">
+        <section className="w-full mt-10 h-[18rem] flex flex-col justify-center items-center mb-20">
           <div className="bg-white w-[80%] shadow-lg flex items-center justify-center rounded-md">
             <img
               src={imageApresentationSeven}

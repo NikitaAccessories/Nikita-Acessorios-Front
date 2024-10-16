@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "../../GlobalStylesForComponents.css";
 import logoPNG from "../../../assets/elements-Account/logo.png";
@@ -81,8 +81,8 @@ const ReceivedCodeDesktop: React.FC = () => {
               </div>
 
               <div className="flex items-center justify-center text-white space-x-4 mt-6">
-                <button className="flex items-center justify-center bg-primary-graphite w-36 h-8 rounded-2xl text-lg">
-                  <Link to={"/AccountPage"}>
+                <Link to={"/AccountPage"}>
+                  <button className="flex items-center justify-center bg-primary-graphite w-36 h-8 rounded-2xl text-lg">
                     <span className="flex items-center justify-center gap-2 mr-4">
                       <img
                         className="h-4 w-4"
@@ -91,8 +91,8 @@ const ReceivedCodeDesktop: React.FC = () => {
                       />
                       Voltar
                     </span>
-                  </Link>
-                </button>
+                  </button>
+                </Link>
                 <button
                   className="flex items-center justify-center bg-primary-graphite w-36 h-8 rounded-2xl text-lg"
                   type="submit"

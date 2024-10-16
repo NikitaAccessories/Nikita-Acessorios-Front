@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import ReceivedCodeMobile from "../../components/__page-components/__account-page-components/ReceiveCodeMobile";
-import ReceivedCodeDesktop from "../../components/__page-components/__account-page-components/ReceiveCodeDesktop";
+import AccountCreationMobile from "../../components/__page-components/__account-page-components/AccountCreationMobile";
+import AccountCreationDesktop from "../../components/__page-components/__account-page-components/AccountCreationDesktop";
 import "./GlobalAccountPagesStyles.css";
 
-const ReceiveCodeIndex: React.FC = () => {
+const AccountCreationIndex: React.FC = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
@@ -16,8 +16,10 @@ const ReceiveCodeIndex: React.FC = () => {
   }, []);
 
   return (
-    <div>{isMobile ? <ReceivedCodeMobile /> : <ReceivedCodeDesktop />}</div>
+    <div>
+      {isMobile ? <AccountCreationMobile /> : <AccountCreationDesktop />}
+    </div>
   );
 };
 
-export default ReceiveCodeIndex;
+export default AccountCreationIndex;
