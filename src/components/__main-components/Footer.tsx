@@ -1,11 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import whatsappICON from "../../assets/elements-Home/icons/whatsapp-icon.png";
 import instagramICON from "../../assets/elements-Home/icons/instragram-icon.png";
 import truckICON from "../../assets/elements-Home/icons/truck.png";
 import cardICON from "../../assets/elements-Home/icons/card.png";
 import trocaICON from "../../assets/elements-Home/icons/troca.png";
-import "../GlobalStylesForComponents.css";
 
 const Footer: React.FC = () => {
   return (
@@ -98,7 +96,7 @@ const Footer: React.FC = () => {
             <h1 className="font-bold">NIKITA</h1>
             <p>Redes Sociais</p>
             <div className="flex justify-center gap-2 mt-2">
-              <a href="">
+              <a href="#">
                 <img
                   className="w-6 h-6 cursor-pointer"
                   src={whatsappICON}

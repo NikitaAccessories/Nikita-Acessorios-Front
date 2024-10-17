@@ -1,13 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "../../GlobalStylesForComponents.css";
 import logoPNG from "../../../assets/elements-Account/logo.png";
-import appleIcon from "../../../assets/elements-Account/icons/apple-icon.png";
-import googleIcon from "../../../assets/elements-Account/icons/google-icon.png";
-import facebookIcon from "../../../assets/elements-Account/icons/facebook-icon.png";
 import visiblePassowrd from "../../../assets/elements-Account/icons/password-visible.png";
 import notVisiblePassword from "../../../assets/elements-Account/icons/password-not-visible.png";
 import arrowLeft from "../../../assets/elements-Account/icons/arrow-left-icon.png";
+import LoginButtons from "../../__main-components/LoginButtons";
 
 const AccountPageDesktop: React.FC = () => {
   // Estado para controlar a visualização da senha
@@ -30,33 +27,8 @@ const AccountPageDesktop: React.FC = () => {
         </Link>
       </header>
       <main className="flex flex-col items-center justify-center mt-8">
-        <section className="flex items-center w-[42rem] h-[19rem] bg-primary-rose px-6 shadow-xl border border-gray-300 mb-4">
-          <div className="flex flex-col space-y-4 w-1/2">
-            <h1 className="flex flex-col text-center font-playfairDisplay">
-              Não possui uma conta?
-              <span className="cursor-pointer">Cadastre-se.</span>
-            </h1>
-            <button className="flex items-center justify-start bg-white w-[18rem] py-3 rounded-lg shadow-md border border-gray-300 font-libreBaskerville">
-              <img
-                src={googleIcon}
-                className="w-6 h-6 ml-3"
-                alt="Google Icon"
-              />
-              <span className="ml-4 text-sm">ENTRE COM O GOOGLE</span>
-            </button>
-            <button className="flex items-center justify-start bg-white w-[18rem] py-3 rounded-lg shadow-md border border-gray-300 font-libreBaskerville">
-              <img
-                src={facebookIcon}
-                className="w-6 h-6 ml-3"
-                alt="Facebook Icon"
-              />
-              <span className="ml-4 text-sm">ENTRE COM O FACEBOOK</span>
-            </button>
-            <button className="flex items-center justify-start bg-white w-[18rem] py-3 rounded-lg shadow-md border border-gray-300 font-libreBaskerville">
-              <img src={appleIcon} className="w-6 h-6 ml-3" alt="Apple Icon" />
-              <span className="ml-4 text-sm">ENTRE COM A APPLE</span>
-            </button>
-          </div>
+        <section className="flex items-center w-[42rem] h-[19rem] bg-primary-rose px-4 shadow-xl border border-gray-300 mb-4">
+          <LoginButtons />
           <div className="flex flex-col items-center justify-center w-1/2 font-playfairDisplay">
             <h1 className="flex flex-col text-center font-libreBaskerville">
               ENTRAR COM MEU E-MAIL E <span>SENHA</span>

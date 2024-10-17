@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ReceivedCodeMobile from "../../components/__page-components/__account-page-components/ReceiveCodeMobile";
 import ReceivedCodeDesktop from "../../components/__page-components/__account-page-components/ReceiveCodeDesktop";
-import "./GlobalAccountPagesStyles.css";
 
 const ReceiveCodeIndex: React.FC = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);

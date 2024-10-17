@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "../GlobalStylesForComponents.css";
 import logoPNG from "../../assets/elements-Home/logo.png";
 import shoppingBagICON from "../../assets/elements-Home/icons/shoopingBag.png";
 import searchICON from "../../assets/elements-Home/icons/search.png";

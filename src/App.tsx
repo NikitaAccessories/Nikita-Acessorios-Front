@@ -18,6 +18,7 @@ import AccountCreationMobile from "./components/__page-components/__account-page
 import "./index.css";
 import "./tailwind.css";
 import AccountCreationIndex from "./pages/AccountPage/AccountCreationIndex";
+import LoginButtons from "./components/__main-components/LoginButtons";
 
 const App: React.FC = () => {
   return (
@@ -30,6 +31,7 @@ const App: React.FC = () => {
 
         {/* PÁGINAS E COMPONENTES */}
         <Route element={<Header />} />
+        <Route element={<LoginButtons />} />
         <Route element={<SeeAllButton />} />
         <Route element={<Footer />} />
         <Route element={<HomePageDesktop />} />

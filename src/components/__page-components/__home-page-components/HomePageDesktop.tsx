@@ -14,7 +14,6 @@ import imageApresentationSix from "../../../assets/elements-Home/images-apresent
 import Header from "../../__main-components/Header";
 import SeeAllButton from "../../__main-components/SeeAllButton";
 import Footer from "../../__main-components/Footer";
-import "../../GlobalStylesForComponents.css"
 import PromotionScreen from "../../__main-components/PromotionScreen";
 
 const HomePageDesktop: React.FC = () => {

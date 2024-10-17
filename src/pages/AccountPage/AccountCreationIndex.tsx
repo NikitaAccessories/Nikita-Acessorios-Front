@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import AccountCreationMobile from "../../components/__page-components/__account-page-components/AccountCreationMobile";
 import AccountCreationDesktop from "../../components/__page-components/__account-page-components/AccountCreationDesktop";
-import "./GlobalAccountPagesStyles.css";
 
 const AccountCreationIndex: React.FC = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);

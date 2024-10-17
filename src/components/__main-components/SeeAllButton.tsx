@@ -1,5 +1,4 @@
 import React from "react";
-import "../GlobalStylesForComponents.css";
 
 const SeeAllButton: React.FC = () => {
   return (

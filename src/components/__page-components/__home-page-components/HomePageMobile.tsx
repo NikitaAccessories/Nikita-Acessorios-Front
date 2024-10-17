@@ -20,7 +20,6 @@ import outrosPNG from "../../../assets/elements-Home/images-products/outros.png"
 import Header from "../../__main-components/Header";
 import SeeAllButton from "../../__main-components/SeeAllButton";
 import Footer from "../../__main-components/Footer";
-import "../../GlobalStylesForComponents.css";
 
 const HomePageMobile: React.FC = () => {
   // Estado para controlar o índice do carrossel

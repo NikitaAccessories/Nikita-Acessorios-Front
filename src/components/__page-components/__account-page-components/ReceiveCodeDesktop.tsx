@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../../GlobalStylesForComponents.css";
 import logoPNG from "../../../assets/elements-Account/logo.png";
 import appleIcon from "../../../assets/elements-Account/icons/apple-icon.png";
 import googleIcon from "../../../assets/elements-Account/icons/google-icon.png";
 import facebookIcon from "../../../assets/elements-Account/icons/facebook-icon.png";
 import arrowLeft from "../../../assets/elements-Account/icons/arrow-left-icon.png";
+import LoginButtons from "../../__main-components/LoginButtons";
 
 const ReceivedCodeDesktop: React.FC = () => {
   return (
@@ -21,43 +21,13 @@ const ReceivedCodeDesktop: React.FC = () => {
       </header>
       <main className="flex flex-col items-center justify-center mt-8">
         <section className="flex flex-col items-center w-[42rem] h-[19rem] bg-primary-rose px-6 shadow-xl border border-gray-300 mb-4">
-          <div className="flex items-center justify-center mt-4">
+          <div className="flex items-center justify-center">
             <h1 className="text-xl text-bold font-playfairDisplay">
               escolha uma opção para entrar
             </h1>
           </div>
           <div className="w-full h-full flex items-center justify-center">
-            <div className="flex flex-col space-y-2 w-1/2">
-              <button className="flex items-center justify-start bg-white w-[18rem] py-3 rounded-lg shadow-md border border-gray-300 font-libreBaskerville">
-                <img
-                  src={googleIcon}
-                  className="w-6 h-6 ml-3"
-                  alt="Google Icon"
-                />
-                <span className="ml-4 text-sm">ENTRE COM O GOOGLE</span>
-              </button>
-              <button className="flex items-center justify-start bg-white w-[18rem] py-3 rounded-lg shadow-md border border-gray-300 font-libreBaskerville">
-                <img
-                  src={facebookIcon}
-                  className="w-6 h-6 ml-3"
-                  alt="Facebook Icon"
-                />
-                <span className="ml-4 text-sm">ENTRE COM O FACEBOOK</span>
-              </button>
-              <button className="flex items-center justify-start bg-white w-[18rem] py-3 rounded-lg shadow-md border border-gray-300 font-libreBaskerville">
-                <img
-                  src={appleIcon}
-                  className="w-6 h-6 ml-3"
-                  alt="Apple Icon"
-                />
-                <span className="ml-4 text-sm">ENTRE COM A APPLE</span>
-              </button>
-              <button className="flex items-center justify-start bg-white w-[18rem] py-3 rounded-lg shadow-md border border-gray-300 font-libreBaskerville">
-                <span className="ml-[0.7rem] text-[0.7rem]">
-                  RECEBER CÓDIGO DE ACESSO POR EMAIL
-                </span>
-              </button>
-            </div>
+            <LoginButtons />
             <div className="flex flex-col items-center justify-center w-1/2 font-playfairDisplay">
               <span className="self-center text-md mb-2 w-[20.1rem]">
                 RECEBER CÓDIGO DE ACESSO POR E-MAIL

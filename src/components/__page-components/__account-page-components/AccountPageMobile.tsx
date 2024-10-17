@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../../GlobalStylesForComponents.css";
 import GoogleIcon from "../../../assets/elements-Account/icons/google-icon.png";
 import FacebookIcon from "../../../assets/elements-Account/icons/facebook-icon.png";
 import AppleIcon from "../../../assets/elements-Account/icons/apple-icon.png";
 import ClosedPageIcon from "../../../assets/elements-Account/icons/closedICON.png";
+import LoginButtons from "../../__main-components/LoginButtons";
 
 const AccountPageMobile: React.FC = () => {
   return (
@@ -42,18 +42,7 @@ const AccountPageMobile: React.FC = () => {
           </Link>
         </section>
         <section className="flex flex-col gap-4 font-libreBaskerville">
-          <div className="flex items-center justify-center w-72 h-10 bg-white rounded-md shadow-lg border border-gray-200 gap-2">
-            <img className="w-6 h-6" src={GoogleIcon} alt="Google Icon" />
-            <span className="text-[14px]">ENTRE COM O GOOGLE</span>
-          </div>
-          <div className="flex items-center justify-center w-72 h-10 bg-white rounded-md shadow-lg border border-gray-200 gap-2">
-            <img className="w-6 h-6" src={FacebookIcon} alt="Facebook Icon" />
-            <span className="text-[14px]">ENTRE COM O FACEBOOK</span>
-          </div>
-          <div className="flex items-center justify-center w-72 h-10 bg-white rounded-md shadow-lg border border-gray-200 gap-2">
-            <img className="w-6 h-6" src={AppleIcon} alt="Apple Icon" />
-            <span className="text-[14px]">ENTRE COM A APPLE</span>
-          </div>
+          <LoginButtons />
         </section>
       </main>
     </>
