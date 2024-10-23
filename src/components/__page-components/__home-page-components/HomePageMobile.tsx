@@ -1,15 +1,13 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import videoFile from "../../../assets/elements-Home/slidesShow/slidesGif.gif";
 import arrowLeft from "../../../assets/elements-Home/icons/arrow-left.png";
 import arrowRight from "../../../assets/elements-Home/icons/arrow-right.png";
 import anelJPEG from "../../../assets/elements-Home/images-products/anel.jpeg";
-import colarJPEG from "../../../assets/elements-Home/images-products/colar.jpeg";
 import imageApresentationOne from "../../../assets/elements-Home/images-apresentation/image1.jpeg";
 import imageApresentationTwo from "../../../assets/elements-Home/images-apresentation/image2.jpeg";
 import imageApresentationThree from "../../../assets/elements-Home/images-apresentation/image3.jpeg";
 import imageApresentationFour from "../../../assets/elements-Home/images-apresentation/image4.jpeg";
 import imageApresentationFive from "../../../assets/elements-Home/images-apresentation/image5.jpeg";
-import imageApresentationSix from "../../../assets/elements-Home/images-apresentation/image6.jpeg";
 import imageApresentationSeven from "../../../assets/elements-Home/images-apresentation/image7.png";
 import anelPandoraPNG from "../../../assets/elements-Home/images-products/anelPandora.png";
 import brincosPNG from "../../../assets/elements-Home/images-products/brincos.png";
@@ -190,6 +188,7 @@ const HomePageMobile: React.FC = () => {
                   <img
                     src={brincosPNG}
                     className="w-full h-full object-cover"
+                    alt="Produtos Brincos"
                   />
                 </div>
                 <button className="flex items-center font-baskervville justify-center mt-2 border-2 w-[6rem] h-[2rem] shadow-md">
@@ -201,6 +200,7 @@ const HomePageMobile: React.FC = () => {
                   <img
                     src={pulseiraPNG}
                     className="w-full h-full object-cover"
+                    alt="Produtos Pulseiras"
                   />
                 </div>
                 <button className="flex items-center font-baskervville justify-center mt-2 border-2 w-[6rem] h-[2rem] shadow-md">
@@ -212,6 +212,7 @@ const HomePageMobile: React.FC = () => {
                   <img
                     src={anelPandoraPNG}
                     className="w-full h-full object-cover"
+                    alt="Produtos Aneis"
                   />
                 </div>
                 <button className="flex items-center font-baskervville justify-center mt-2 border-2 w-[6rem] h-[2rem] shadow-md">
@@ -223,6 +224,7 @@ const HomePageMobile: React.FC = () => {
                   <img
                     src={colarCoraçãoPNG}
                     className="w-full h-full object-cover"
+                    alt="Imagem Colar"
                   />
                 </div>
                 <button className="flex items-center font-baskervville justify-center mt-2 border-2 w-[6rem] h-[2rem] shadow-md">
@@ -231,7 +233,7 @@ const HomePageMobile: React.FC = () => {
               </div>
               <div className="flex flex-col items-center justify-center">
                 <div className="w-[10rem] h-[10rem] shadow-md">
-                  <img src={bolsaPNG} className="w-full h-full object-cover" />
+                  <img src={bolsaPNG} className="w-full h-full object-cover" alt="Imagem Bolsa"/>
                 </div>
                 <button className="flex items-center font-baskervville justify-center mt-2 border-2 w-[6rem] h-[2rem] shadow-md">
                   BOLSAS
@@ -239,7 +241,7 @@ const HomePageMobile: React.FC = () => {
               </div>
               <div className="flex flex-col items-center justify-center">
                 <div className="w-[10rem] h-[10rem] shadow-md">
-                  <img src={outrosPNG} className="w-full h-full object-cover" />
+                  <img src={outrosPNG} className="w-full h-full object-cover" alt="Outros Produtos" />
                 </div>
                 <button className="flex items-center font-baskervville justify-center mt-2 border-2 w-[6rem] h-[2rem] shadow-md">
                   OUTROS

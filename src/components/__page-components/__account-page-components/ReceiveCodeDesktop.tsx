@@ -1,9 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logoPNG from "../../../assets/elements-Account/logo.png";
-import appleIcon from "../../../assets/elements-Account/icons/apple-icon.png";
-import googleIcon from "../../../assets/elements-Account/icons/google-icon.png";
-import facebookIcon from "../../../assets/elements-Account/icons/facebook-icon.png";
 import arrowLeft from "../../../assets/elements-Account/icons/arrow-left-icon.png";
 import LoginButtons from "../../__main-components/LoginButtons";
 

@@ -15,10 +15,15 @@ import ReceivedCodeDesktop from "./components/__page-components/__account-page-c
 import ReceivedCodeMobile from "./components/__page-components/__account-page-components/ReceiveCodeMobile";
 import AccountCreationDesktop from "./components/__page-components/__account-page-components/AccountCreationDesktop";
 import AccountCreationMobile from "./components/__page-components/__account-page-components/AccountCreationMobile";
-import "./index.css";
-import "./tailwind.css";
 import AccountCreationIndex from "./pages/AccountPage/AccountCreationIndex";
 import LoginButtons from "./components/__main-components/LoginButtons";
+import DropdownJoias from "./components/__main-components/__components-dropdown-header/DropdownJoias";
+import DropdownAcessorios from "./components/__main-components/__components-dropdown-header/DropdownAcessorios";
+import DropdownColecoes from "./components/__main-components/__components-dropdown-header/DropdownColecoes";
+import DropdownMaisVendidos from "./components/__main-components/__components-dropdown-header/DropdownMaisVendidos";
+import DropdownPresentes from "./components/__main-components/__components-dropdown-header/DropdownPresentes";
+import "./index.css";
+import "./tailwind.css";
 
 const App: React.FC = () => {
   return (
@@ -31,6 +36,11 @@ const App: React.FC = () => {
 
         {/* PÁGINAS E COMPONENTES */}
         <Route element={<Header />} />
+        <Route element={<DropdownJoias />} />
+        <Route element={<DropdownAcessorios />} />
+        <Route element={<DropdownColecoes />} />
+        <Route element={<DropdownMaisVendidos />} />
+        <Route element={<DropdownPresentes />} />
         <Route element={<LoginButtons />} />
         <Route element={<SeeAllButton />} />
         <Route element={<Footer />} />
