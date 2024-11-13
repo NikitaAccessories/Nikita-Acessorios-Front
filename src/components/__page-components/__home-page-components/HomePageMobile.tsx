@@ -295,7 +295,7 @@ const HomePageMobile: React.FC = () => {
           </div>
         </section>
 
-        <section className="flex items-center justify-center grid grid-cols-2 gap-6 px-6 mt-10 mb-10">
+        <section className="items-center justify-center grid grid-cols-2 gap-6 px-6 mt-10 mb-10">
           <div className="flex flex-col items-center justify-center space-y-4">
             <img
               src={imageApresentationOne}
