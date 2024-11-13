@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
 import videoFile from "../../../assets/elements-Home/slidesShow/slidesGif.gif";
 import arrowLeft from "../../../assets/elements-Home/icons/arrow-left.png";
 import arrowRight from "../../../assets/elements-Home/icons/arrow-right.png";
@@ -111,14 +110,13 @@ const HomePageDesktop: React.FC = () => {
 
   return (
     <>
-
       <Header />
       <PromotionScreen />
       <main>
         <section className="w-full mt-40 h-[36rem] flex justify-center items-center">
           <div className="bg-white w-[70rem] shadow-2xl flex items-center justify-center">
             <figure className="shadow-2xl">
-              <img src={videoFile} loading="lazy" />
+              <img src={videoFile} loading="lazy" alt="Gif Video" />
             </figure>
           </div>
         </section>
@@ -128,7 +126,7 @@ const HomePageDesktop: React.FC = () => {
             className="border-2 z-10 absolute left-14 transform -translate-y-1/2 bg-white flex items-center justify-center w-10 h-10 rounded-full shadow-xl"
             onClick={handlePrev} // Moverá para a esquerda
           >
-            <img src={arrowLeft} loading="lazy" />
+            <img src={arrowLeft} loading="lazy" alt="Seta para Esquerda" />
           </button>
 
           {/* Contêiner do carrossel */}
@@ -159,7 +157,7 @@ const HomePageDesktop: React.FC = () => {
             className="border-2 z-10 absolute right-14 transform -translate-y-1/2 bg-white flex items-center justify-center w-10 h-10 rounded-full shadow-xl"
             onClick={handleNext} // Moverá para a direita
           >
-            <img src={arrowRight} loading="lazy" />
+            <img src={arrowRight} loading="lazy" alt="Seta para Direita" />
           </button>
 
           {/* Botão "VER TODOS" posicionado corretamente */}
@@ -185,7 +183,12 @@ const HomePageDesktop: React.FC = () => {
             </div>
           </div>
           <div className="bg-white left-0 h-full w-1/2">
-            <img className="h-full w-full" src={colarJPEG} loading="lazy" />
+            <img
+              className="h-full w-full"
+              src={colarJPEG}
+              loading="lazy"
+              alt="Colar Imagem"
+            />
           </div>
         </section>
         <section className="bg-white w-full h-[40rem] flex items-center justify-center">
@@ -195,6 +198,7 @@ const HomePageDesktop: React.FC = () => {
                 src={imageApresentationOne}
                 className="w-full h-[32rem]"
                 loading="lazy"
+                alt=""
               />
             </div>
             <div className="w-1/2 grid grid-cols-2 gap-4">
@@ -202,21 +206,25 @@ const HomePageDesktop: React.FC = () => {
                 src={imageApresentationTwo}
                 className="w-[15rem] h-[15.5rem]"
                 loading="lazy"
+                alt=""
               />
               <img
                 src={imageApresentationThree}
                 className="w-[15rem] h-[15.5rem]"
                 loading="lazy"
+                alt=""
               />
               <img
                 src={imageApresentationFour}
                 className="w-[15rem] h-[15.5rem]"
                 loading="lazy"
+                alt=""
               />
               <img
                 src={imageApresentationFive}
                 className="w-[15rem] h-[15.5rem]"
                 loading="lazy"
+                alt=""
               />
             </div>
           </div>
@@ -293,6 +301,7 @@ const HomePageDesktop: React.FC = () => {
               src={imageApresentationSix}
               className="w-full h-full"
               loading="lazy"
+              alt=""
             />
           </div>
         </section>

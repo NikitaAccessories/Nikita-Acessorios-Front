@@ -1,8 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import GoogleIcon from "../../../assets/elements-Account/icons/google-icon.png";
-import FacebookIcon from "../../../assets/elements-Account/icons/facebook-icon.png";
-import AppleIcon from "../../../assets/elements-Account/icons/apple-icon.png";
 import ClosedPageIcon from "../../../assets/elements-Account/icons/closedICON.png";
 import LoginButtons from "../../__main-components/LoginButtons";
 

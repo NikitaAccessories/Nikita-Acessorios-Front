@@ -59,9 +59,7 @@ const Footer: React.FC = () => {
           <p>atendimento@nikita.com.br</p>
           <p>FORTALEZA - CE</p>
 
-          <h1 className="text-sm font-bold mt-4 text-xl">
-            FORMAS DE PAGAMENTO
-          </h1>
+          <h1 className="text-sm font-bold mt-4">FORMAS DE PAGAMENTO</h1>
           <div className="flex space-x-4">
             <div className="w-12 h-6 bg-white"></div>
             <div className="w-12 h-6 bg-white"></div>
@@ -96,7 +94,7 @@ const Footer: React.FC = () => {
             <h1 className="font-bold">NIKITA</h1>
             <p>Redes Sociais</p>
             <div className="flex justify-center gap-2 mt-2">
-              <a href="#">
+              <a href="https://wa.me/558587875071">
                 <img
                   className="w-6 h-6 cursor-pointer"
                   src={whatsappICON}

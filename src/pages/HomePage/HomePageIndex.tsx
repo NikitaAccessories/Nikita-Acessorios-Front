@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import HomePageDesktop from "../../components/__page-components/__home-page-components/HomePageDesktop";
 import HomePageMobile from "../../components/__page-components/__home-page-components/HomePageMobile";
+import "./homePage.css";
 
 const HomePageIndex: React.FC = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);

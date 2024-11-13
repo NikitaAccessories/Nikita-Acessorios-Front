@@ -29,12 +29,13 @@ const App: React.FC = () => {
   return (
     <Router>
       <Routes>
+        {/* INDEX DE CADA PÁGINA */}
         <Route path="/" element={<HomePageIndex />} />
         <Route path="/AccountPage" element={<AccountPageIndex />} />
         <Route path="/AccountCreation" element={<AccountCreationIndex />} />
         <Route path="/ReceiveCode" element={<ReceivedCodeIndex />} />
 
-        {/* PÁGINAS E COMPONENTES */}
+        {/* COMPONENTES PARA DISPOSITIVOS E PÁGINAS */}
         <Route element={<Header />} />
         <Route element={<DropdownJoias />} />
         <Route element={<DropdownAcessorios />} />

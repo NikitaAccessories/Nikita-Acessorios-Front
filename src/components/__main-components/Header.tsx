@@ -59,22 +59,22 @@ const Header: React.FC = () => {
       </nav>
 
       {/* Barra de navegação inferior visível apenas em desktops */}
-      <div className="bg-primary-beige50 mt-2 w-full h-11 flex justify-center hidden md:flex">
+      <div className="bg-primary-beige50 mt-2 w-full h-11 justify-center hidden md:flex">
         <ul className="md:flex items-center justify-center">
           {/* Item 1 - JÓIAS */}
           <DropdownJoias />
 
           {/* Item 2 - ACESSÓRIOS */}
-          <DropdownAcessorios/>
+          <DropdownAcessorios />
 
           {/* Item 3 - COLEÇÕES */}
-          <DropdownColecoes/>
+          <DropdownColecoes />
 
           {/* Item 4 - MAIS VENDIDOS */}
-          <DropdownMaisVendidos/>
+          <DropdownMaisVendidos />
 
           {/* Item 5 - PRESENTES */}
-          <DropdownPresentes/>
+          <DropdownPresentes />
         </ul>
       </div>
 
